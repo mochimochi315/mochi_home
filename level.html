@@ -64,50 +64,56 @@
 					</ul>
 				</div><!-- /.home-news -->
 
-				<h2 class="home-h2">学年</h2>
+				<h2 class="home-h2">レベル</h2>
 				<ul class="home-course">
 					<li>
-						<a href="#">
-							<figure><img src="images/course1.png" alt="">
-								<figcaption>１年</figcaption>
-							</figure>
-						</a>
-					</li>
-					<li>
-						<a href="#">
+						<!--onclickイベントの後に、ページが遷移しないようにするために、「event.preventDefault();」を記述した。
+						ただし、hrefの値も参照し、コードの中で使っている。-->
+						<a href="#" onclick="showAttribute(this); event.preventDefault();">
 							<figure><img src="images/course2.png" alt="">
-								<figcaption>２年</figcaption>
+								<figcaption>単元に戻る</figcaption>
 							</figure>
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<!--onclickイベントの後に、ページが遷移しないようにするために、「event.preventDefault();」を記述した。
+						ただし、hrefの値も参照し、コードの中で使っている。-->
+						<a href="shutsudai.html?level=1" onclick="showAttribute(this); event.preventDefault();">
+
+							<figure><img src="images/course1.png" alt="">
+								<figcaption>レベル１</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="shutsudai.html?level=2" onclick="showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course2.png" alt="">
+								<figcaption>レベル２</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="shutsudai.html?level=3" onclick="showAttribute(this); event.preventDefault();">
 							<figure><img src="images/course3.png" alt="">
-								<figcaption>３年</figcaption>
+								<figcaption>レベル３</figcaption>
 							</figure>
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="shutsudai.html?level=4" onclick="showAttribute(this); event.preventDefault();">
 							<figure><img src="images/course4.png" alt="">
-								<figcaption>４年</figcaption>
+								<figcaption>レベル４</figcaption>
 							</figure>
 						</a>
 					</li>
 					<li>
-						<a href="kyouka.html?gakunen=5">
+						<a href="shutsudai.html?level=5" onclick="showAttribute(this); event.preventDefault();">
 							<figure><img src="images/course1.png" alt="">
-								<figcaption>５年</figcaption>
+								<figcaption>レベル５</figcaption>
 							</figure>
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							<figure><img src="images/course2.png" alt="">
-								<figcaption>６年</figcaption>
-							</figure>
-						</a>
-					</li>
+
 				</ul>
 			</main>
 		</div>
@@ -130,7 +136,7 @@
 	<!-- ========== /footer ========== -->
 
 	<script src="script/script.js"></script>
-
+	<script src="script/level.js"></script>
 </body>
 
 </html>
