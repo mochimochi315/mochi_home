@@ -227,6 +227,17 @@ function answerQuiz2() {
 
         document.getElementById('kaitou').placeholder = '答えは、ひらがな' + kotaeno_nagasa + '文字';
 
+        //配列オブジェクトにある「画像ファイルのファイル名」を変数に入れている。
+        let image_file_name = mondai.find(item => item.number === attack).image_name;
+
+        //画像ファイル名が書かれていた場合には、以下の処理を実行する。
+        if (image_file_name != "") {
+            imgElement.src = `images/img_data/${image_file_name}`;
+            //imgElement.src = "images/img_data/1-shakai-1-01.png";
+
+            //window.alert(imgElement.src);
+        }
+
         //問題文の表示
         document.getElementById('choice2').textContent = result2;
 
@@ -324,13 +335,18 @@ function answerQuiz2() {
                     let img_id3 = Math.floor(Math.random() * img_zannen_kazu);
 
                     //通常は、正解するとmachigaetakazu=0になるので、ここでは、3問連続間違えた場合の処理を示している。
-                    if (machigaetakazu > 2) {
+                    if (machigaetakazu >= 2) {
 
                         // .mondai_imgクラスの子要素のimgタグ（img要素）を取得
                         let imgElement = document.querySelector('.mondai_img img');
 
                         // src 属性のイメージファイルを固定された不正解画像に変更する。
                         imgElement.src = "images/zannen/3000.png";
+
+                        setTimeout(() => {
+                            // 10秒後に画像を切り替える。問題画像に戻す。
+                            imgElement.src = "images/img_data/" + `${image_file_name}`;
+                        }, 10000); // 10秒（10000ミリ秒）後に実行
 
                     } else {
 
@@ -339,8 +355,12 @@ function answerQuiz2() {
 
                         // src 属性のイメージファイルをランダムな不正解画像に変更する。
                         imgElement.src = img_zannen[img_id3];
-                    }
 
+                        setTimeout(() => {
+                            // 3秒後に画像を切り替える。問題画像に戻す。
+                            imgElement.src = "images/img_data/" + `${image_file_name}`;
+                        }, 3000); // 3秒（3000ミリ秒）後に実行
+                    }
 
                     //window.alert(img_zannen[img_id3]);
 
@@ -350,7 +370,7 @@ function answerQuiz2() {
                     //不正解メッセージは、配列から受け取る。配列は0から始まるので、以下のコードに「+1」をつけていない。
                     let msg_id3 = Math.floor(Math.random() * msg_zannen_kazu);
 
-                    if (machigaetakazu > 2) {
+                    if (machigaetakazu >= 2) {
                         //不正解のメッセージを表示する（３問以上間違えた場合）。
                         document.getElementById('output').textContent = "先生にヒントをもらいましょう。";
 
