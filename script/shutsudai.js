@@ -239,7 +239,9 @@ function answerQuiz2() {
         }
 
         //問題文の表示
-        document.getElementById('choice2').textContent = result2;
+        //textContentではなく、innerHTMLにしている。つまり、タグを入れるようにしている。
+        //これによって、問題文の中に<BR>タグを入れることで、改行できるようになる。
+        document.getElementById('choice2').innerHTML = result2;
 
         //以下のフォームのボタンは、関数answerQuiz2の中にあるにもかかわず、ボタンを押すことで、関数の外からここまで飛んできてしまうことができてしまう。
         //関数の中に入り込んでしまえる点が不思議である。
