@@ -15,7 +15,6 @@ let attack;
 
 //window.alert(img_question_kazu);
 
-
 //正解するごとに、オブジェクトmondai_hantei内のhanteiが、「"ok"」に変わっていく。
 //この配列の中に「ok」がある問題は、出題されないようにしている。
 let mondai_hantei = [
