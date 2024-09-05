@@ -74,16 +74,21 @@ function renderChart() {
 //「level.html」から、「kyouka.html」に戻る時には、正しく動作しなかった。
 //正確に言えば、「let to_level_url3 = ('level.html?' + query_data6);」までは、正しく動作して、最後に、
 //リンク先に飛ばなかった。「level.html」に、「event.preventDefault();」を記述すれば、正しく動作するかもしれない（未検証）。
+let level_data2 = {};
+
+let query_data5 = GetQueryString(level_data2);
+
+let gakunen_data_atai2 = query_data5.gakunen;
+
+let kyouka_data_atai2 = query_data5.kyouka;
+
+let tangen_data_atai2 = query_data5.tangen;
+
+//以下のコードは、「レベル○を全問正解しました。」の表示の時に使用している。
+let level_data_atai2 = query_data5.level;
+
+
 function modoru() {
-    let level_data2 = {};
-
-    let query_data5 = GetQueryString(level_data2);
-
-    let gakunen_data_atai2 = query_data5.gakunen;
-
-    let kyouka_data_atai2 = query_data5.kyouka;
-
-    let tangen_data_atai2 = query_data5.tangen;
 
     //テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
     let query_data6 = `tangen=${tangen_data_atai2}` + "&" + `kyouka=${kyouka_data_atai2}` + "&" + `gakunen=${gakunen_data_atai2}`;
@@ -401,7 +406,7 @@ function answerQuiz2() {
 
                 //問題数を書き換える場合には、ここを編集する。
                 if (seikaisuu === 10) {
-                    document.getElementById('output5').textContent = '全問正解しました。この画面を先生に見せてください。';
+                    document.getElementById('output5').textContent = 'レベル' + level_data_at + 'を全問正解しました。この画面を先生に見せてください。';
 
 
                 } //else if (seikaisuu > 10) {
