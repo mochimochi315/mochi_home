@@ -362,10 +362,13 @@ function answerQuiz2() {
                         // src 属性のイメージファイルをランダムな不正解画像に変更する。
                         imgElement.src = img_zannen[img_id3];
 
-                        setTimeout(() => {
+                        //オブジェクト配列の中に、画像のファイル名が存在しない場合には、以下の処理を行わないようにする。
+			    if (image_file_name != "") {
+			    setTimeout(() => {
                             // 3秒後に画像を切り替える。問題画像に戻す。
                             imgElement.src = "images/img_data/" + `${image_file_name}`;
                         }, 3000); // 3秒（3000ミリ秒）後に実行
+			}
                     }
 
                     //window.alert(img_zannen[img_id3]);
