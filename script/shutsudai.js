@@ -406,7 +406,9 @@ function answerQuiz2() {
 
                 //問題数を書き換える場合には、ここを編集する。
                 if (seikaisuu === 10) {
-                    document.getElementById('output5').textContent = 'レベル${level_data_at}を全問正解しました。この画面を先生に見せてください。';
+
+		const zenmon_seikai='レベル' + level_data_atai2 +'を全問正解しました。この画面を先生に見せてください。'
+		document.getElementById('output5').textContent = zenmon_seikai;
 
 
                 } //else if (seikaisuu > 10) {
