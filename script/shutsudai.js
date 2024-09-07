@@ -37,19 +37,28 @@ console.log(mondai_hantei);
 //作業完了後に、「renderChar」関数を実行させる。「renderChar」は、「２つめの引数」なのか「関数」なのかは文字だけでは判別できないが、
 //このページ内に、「renderChart」が関数として定義されているので、関数として扱われる。
 //「'?v=' + new Date().getTime()」は、jsファイルを毎回強制的に読み込ませるために、現在時間をクエリとして、ファイルの後ろにくっつけている。
+//以下のquery_data8は、このファイル内では、変数を定義していないので、query_data8のコメントには、「query_data8が見つかりませんでした。」と
+//書かれている。だが、query_data8は、shutsudai.htmlファイル内の<script>タグで変数が定義され、値が入れられている。
+//そのため、正常に実行されている。
 loadScript('script/data/' + query_data8 + '?v=' + new Date().getTime(), renderChart);
+
 
 // JavaScriptファイルを動的に読み込む関数（コールバック関数）
 //2つめの引数にかかれた「callback」は単なる引数ですが、通常「コールバック関数」として渡されるものです。
 //つまり、callbackは関数そのものであり、loadScript関数の内部でスクリプトの読み込みが完了した後に呼び出される関数です。
 function loadScript(url, callback) {
+    //「script」タグを作成する。ただし、タグのみしか作成されない。例…<script></script>
+    //この時点でタグは、作成されるが、Webページのどの場所に書き込むかが指示されていないので、
+    //Webページ上には、「script」タグは、まだ追加されない。この後、appendChildを実行することで、
+    //scriptタグがWebページ上に、動的に追加される。
     const script = document.createElement('script');
+    //作成されたscriptタグに、src属性を追加する。
     script.src = url;
 
     // スクリプトが正常に読み込まれたときにコールバックを実行
     script.onload = function () {
         console.log(`${url} が正常に読み込まれました。`);
-        callback(); // コールバック関数を実行
+        callback(); // ここは、「callback」ではなく、「callback()」と書かれているので、この場所でコールバック関数を実行する。
     };
 
     // スクリプト読み込みでエラーが発生した場合の処理
@@ -57,6 +66,8 @@ function loadScript(url, callback) {
         console.error(`${url} の読み込みに失敗しました。`);
     };
 
+    //作成されたscriptタグを動的にWebページ上に追加する。
+    //ここでは、ヘッダーに追加されている。
     document.head.appendChild(script); // スクリプトをドキュメントに追加
 }
 
@@ -69,11 +80,8 @@ function renderChart() {
 }
 
 
-//以下は、「shutstdai.html」から、「level.html」に戻るためのコード。このコードは、正しく動作するが、
-//コードを「level.js」ファイルにコピーして、
-//「level.html」から、「kyouka.html」に戻る時には、正しく動作しなかった。
-//正確に言えば、「let to_level_url3 = ('level.html?' + query_data6);」までは、正しく動作して、最後に、
-//リンク先に飛ばなかった。「level.html」に、「event.preventDefault();」を記述すれば、正しく動作するかもしれない（未検証）。
+//以下のコードは、function modoru()内に使用するが、query_data5.level;のコードだけ、
+//他の場所で使用したかったため、function modoru()の外に出してある。
 let level_data2 = {};
 
 let query_data5 = GetQueryString(level_data2);
@@ -87,7 +95,12 @@ let tangen_data_atai2 = query_data5.tangen;
 //以下のコードは、「レベル○を全問正解しました。」の表示の時に使用している。
 let level_data_atai2 = query_data5.level;
 
-
+//以下のfunction modoru() は、「shutstdai.html」から、「level.html」に戻るためのコード。
+//このコードは、正しく動作するが、コードを「level.js」ファイルにコピーして、
+//「level.html」ページから、「kyouka.html」ページに戻る時には、正しく動作しなかった。
+//正確に言えば、「let to_level_url3 = ('level.html?' + query_data6);」までは、正しく動作して、最後に、
+//リンク先に飛ばなかった。「level.html」ページに、「event.preventDefault();」を記述すれば、
+//正しく動作するかもしれない（未検証）。
 function modoru() {
 
     //テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
@@ -100,7 +113,9 @@ function modoru() {
 }
 
 
-function GetQueryString(result) {
+//以下の関数GetQueryStringの定義は、shutsudai.htmlファイルのscriptタグ内に記述されているので、
+//ここでは、コメントにした。ここをコメントにしても正しく動作する。
+/*function GetQueryString(result) {
     if (1 < window.location.search.length) {
         // 最初の1文字 (?記号) を除いた文字列を取得する
         let query = window.location.search.substring(1);
@@ -125,16 +140,20 @@ function GetQueryString(result) {
         }
     }
     return result;
-}
+}*/
 
 
 
 function answerQuiz2() {
 
-    //10問正解したら、「次の問題へ」ボタンを押せなくした。
+    //問題数を調べる
+    const mondai_suu = mondai.length;
+
+    //最初は、「if (seikaisuu < 10) {」と記述して、10問正解したら、「次の問題へ」ボタンを押せなくしたが、
+    //今は、「if (seikaisuu < mondai_suu) {」に変更している。
     //ボタンを押せなくすることで、ボタンを押して、次々と画像を表示させることを防いでいる。
     //また、178行目付近のwhile文の無限ループを回避させている。
-    if (seikaisuu < 10) {
+    if (seikaisuu < mondai_suu) {
 
         //問題の出題画面の初期化
         document.getElementById('output').textContent = '';
@@ -142,9 +161,9 @@ function answerQuiz2() {
         document.getElementById('output5').textContent = '';
         document.getElementById('form').kaitouran.value = "";
 
-        //問題文をランダムに出す。問題部は、10問限定にしてある。
-        //問題数を書き換える場合には、ここを編集する。
-        attack = Math.floor(Math.random() * 10) + 1;
+        //問題文をランダムに出す。最初は、「attack = Math.floor(Math.random() * 10) + 1;」と記述して
+        //問題部を10問限定にしたが、今は、「attack = Math.floor(Math.random() * mondai_suu) + 1;」に変更している。
+        attack = Math.floor(Math.random() * mondai_suu) + 1;
 
         //以下は、フラグの役割として入れてある。9問正解し、10問目が出題された時に、
         //「次の問題へ」ボタンを押すと、出題画像が次々と切り替わってしまう。
@@ -161,12 +180,14 @@ function answerQuiz2() {
         // src 属性のイメージファイルをランダムな画像に変更する。
         imgElement.src = img_question[msg_id3];
 
+        //window.alert("imgElement.src =" + imgElement.src);
+
         //9問正解して、10問目の問題を解くときには、残りの問題は1問。
         //この時に、「次の問題へ」ボタンを押すと、画像が次々と変わっていってしまう。
         //以下のコードは、それを防ぐ処理。9問目の画像が表示された後で、「次の問題へ」ボタンを
         //問題数を書き換える場合には、ここを編集する。
         //押しても、画像は切り替わらない。
-        if (seikaisuu === 9) {
+        if (seikaisuu === (mondai_suu - 1)) {
             gazou_no_kirikae_fuka = 1;
         }
 
@@ -181,8 +202,7 @@ function answerQuiz2() {
         //再びランダムで数字を選ぶようにしている。
         while (result4 === "ok") {
 
-            //問題数を書き換える場合には、ここを編集する。
-            attack = Math.floor(Math.random() * 10) + 1;
+            attack = Math.floor(Math.random() * mondai_suu) + 1;
 
             //ランダムによって、新しい問題が選ばれたが、その新しい問題に対してもOKかどうかをチェックしなくてはならい。
             //そのために、以下の変数result4に、もう一度値を入力している。
@@ -278,8 +298,8 @@ function answerQuiz2() {
                 //document.getElementById('output2').textContent = 'search=' + search;
                 //document.getElementById('output3').textContent = 'kaitou=' + kaitou;
 
-                //開発中は、便宜上、問題の答えは、半角数字にしていて、文字列にしていなかったため、以下の記述を使って開発していた。
-                //一応残してある。
+                //開発中は、便宜上、問題の答えは、半角数字にしていて、文字列にしていなかったため、
+                //以下の記述を使って開発していた。一応残してある。
                 //let search2 = 0;
                 //文字列のsearchを数値に変換する。
                 //search2 = parseInt(search);
@@ -294,10 +314,11 @@ function answerQuiz2() {
                 //文字列と文字列の比較なので、「==」に変更した。
                 if (kaitou == search) {
 
-                    //正解数が9問の時に、この場所にやって来るということは、10問正解しているので、
+                    //最初は、「if (seikaisuu < 9) {」のように記述して、正解数が9問の時に、
+                    //この場所にやって来るということは、すでに10問正解しているので、
                     //以下の表示は出さないようにしている。
-                    //問題数を書き換える場合には、ここを編集する。
-                    if (seikaisuu < 9) {
+                    //今は、「if (seikaisuu < (mondai_suu-1)) {」のように変更した。
+                    if (seikaisuu < (mondai_suu - 1)) {
                         document.getElementById('output5').textContent = '正解です。';
                     }
 
@@ -350,9 +371,9 @@ function answerQuiz2() {
                         imgElement.src = "images/zannen/3000.png";
 
                         setTimeout(() => {
-                            // 10秒後に画像を切り替える。問題画像に戻す。
+                            // 5秒後に画像を切り替える。問題画像に戻す。
                             imgElement.src = "images/img_data/" + `${image_file_name}`;
-                        }, 10000); // 10秒（10000ミリ秒）後に実行
+                        }, 5000); // 5秒（5000ミリ秒）後に実行
 
                     } else {
 
@@ -362,13 +383,10 @@ function answerQuiz2() {
                         // src 属性のイメージファイルをランダムな不正解画像に変更する。
                         imgElement.src = img_zannen[img_id3];
 
-                        //オブジェクト配列の中に、画像のファイル名が存在しない場合には、以下の処理を行わないようにする。
-			    if (image_file_name != "") {
-			    setTimeout(() => {
+                        setTimeout(() => {
                             // 3秒後に画像を切り替える。問題画像に戻す。
                             imgElement.src = "images/img_data/" + `${image_file_name}`;
                         }, 3000); // 3秒（3000ミリ秒）後に実行
-			}
                     }
 
                     //window.alert(img_zannen[img_id3]);
@@ -393,7 +411,7 @@ function answerQuiz2() {
                 }
 
 
-                document.getElementById('output4').textContent = '正解数＝' + seikaisuu;
+                document.getElementById('output4').textContent = `${seikaisuu}問正解（${mondai_suu}問中）`;
 
                 //正解数が10個になったら、while文は、無限ループになってしまうので、ここで、オブジェクト配列を
                 //すべて「hantei:"no"」にする。ここから先は、何問解いても「no」になるとともに、重複した問題が出るようになる。
@@ -408,10 +426,10 @@ function answerQuiz2() {
                 -----------------------------------------------------------------------------*/
 
                 //問題数を書き換える場合には、ここを編集する。
-                if (seikaisuu === 10) {
+                if (seikaisuu === mondai_suu) {
 
-		const zenmon_seikai='レベル' + level_data_atai2 +'を全問正解しました。この画面を先生に見せてください。'
-		document.getElementById('output5').textContent = zenmon_seikai;
+                    const zenmon_seikai = 'レベル' + level_data_atai2 + 'を全問正解しました。この画面を先生に見せてください。'
+                    document.getElementById('output5').textContent = zenmon_seikai;
 
 
                 } //else if (seikaisuu > 10) {
