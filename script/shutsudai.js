@@ -254,12 +254,14 @@ function answerQuiz2() {
         //配列オブジェクトにある「画像ファイルのファイル名」を変数に入れている。
         let image_file_name = mondai.find(item => item.number === attack).image_name;
 
+        //window.alert("image_file_name=" + image_file_name);
+
         //画像ファイル名が書かれていた場合には、以下の処理を実行する。
         if (image_file_name != "") {
             imgElement.src = `images/img_data/${image_file_name}`;
             //imgElement.src = "images/img_data/1-shakai-1-01.png";
 
-            //window.alert(imgElement.src);
+
         }
 
         //問題文の表示
@@ -370,10 +372,14 @@ function answerQuiz2() {
                         // src 属性のイメージファイルを固定された不正解画像に変更する。
                         imgElement.src = "images/zannen/3000.png";
 
-                        setTimeout(() => {
-                            // 5秒後に画像を切り替える。問題画像に戻す。
-                            imgElement.src = "images/img_data/" + `${image_file_name}`;
-                        }, 5000); // 5秒（5000ミリ秒）後に実行
+                        //問題文専用の画像がある場合の処理（３回連続で間違えた場合）
+                        if (image_file_name != "") {
+                            setTimeout(() => {
+                                // 10秒後に画像を切り替える。問題画像に戻す。
+                                imgElement.src = "images/img_data/" + `${image_file_name}`;
+                            }, 10000); // 10秒（10000ミリ秒）後に実行
+                        }
+
 
                     } else {
 
@@ -383,10 +389,15 @@ function answerQuiz2() {
                         // src 属性のイメージファイルをランダムな不正解画像に変更する。
                         imgElement.src = img_zannen[img_id3];
 
-                        setTimeout(() => {
-                            // 3秒後に画像を切り替える。問題画像に戻す。
-                            imgElement.src = "images/img_data/" + `${image_file_name}`;
-                        }, 3000); // 3秒（3000ミリ秒）後に実行
+                        //問題文専用の画像がある場合の処理
+                        if (image_file_name != "") {
+
+                            setTimeout(() => {
+                                // 3秒後に画像を切り替える。問題画像に戻す。
+                                imgElement.src = "images/img_data/" + `${image_file_name}`;
+                            }, 3000); // 3秒（3000ミリ秒）後に実行
+                        }
+
                     }
 
                     //window.alert(img_zannen[img_id3]);
