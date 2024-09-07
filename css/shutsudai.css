@@ -62,7 +62,7 @@ main {
 }
 
 input[type="text"] {
-	width: 400px;
+width: 200px;
 }
 
 .btn {
@@ -115,5 +115,10 @@ input[type="submit"] {
 	.btn_area {
 		display: flex;
 		flex-flow: row;
+	}
+
+	input[type="text"] {
+		width: 400px;
+
 	}
 }
