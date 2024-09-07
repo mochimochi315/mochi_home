@@ -171,7 +171,11 @@ function answerQuiz2() {
         //「gazou_no_kirikae_fuka === 0」の時だけ、「次の問題へ」ボタンを押した時に、画像が切り替わるようにした。
         if (gazou_no_kirikae_fuka === 0) {
             //questionの画像をランダムに出す。
-            msg_id3 = Math.floor(Math.random() * img_question_kazu) + 1;
+            //通常は、「msg_id3 = Math.floor(Math.random() * img_question_kazu) + 1;」のように、
+            //最後に、「+1」を加えて、1問から10問までの問題を出題するようにしている。
+            //だが、ここでは、配列から選択しているため、[0]から[9]までを選択しなくてはならない。
+            //よって、以下の式は、「msg_id3 = Math.floor(Math.random() * img_question_kazu);」に変更した。
+            msg_id3 = Math.floor(Math.random() * img_question_kazu);
         }
 
         // .mondai_imgクラスの子要素のimgタグ（img要素）を取得
@@ -180,7 +184,7 @@ function answerQuiz2() {
         // src 属性のイメージファイルをランダムな画像に変更する。
         imgElement.src = img_question[msg_id3];
 
-        //window.alert("imgElement.src =" + imgElement.src);
+        window.alert("msg_id3=" + msg_id3 + "  :  imgElement.src =" + imgElement.src);
 
         //9問正解して、10問目の問題を解くときには、残りの問題は1問。
         //この時に、「次の問題へ」ボタンを押すと、画像が次々と変わっていってしまう。
