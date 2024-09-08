@@ -184,7 +184,7 @@ function answerQuiz2() {
         // src 属性のイメージファイルをランダムな画像に変更する。
         imgElement.src = img_question[msg_id3];
 
-        window.alert("msg_id3=" + msg_id3 + "  :  imgElement.src =" + imgElement.src);
+        //window.alert("msg_id3=" + msg_id3 + "  :  imgElement.src =" + imgElement.src);
 
         //9問正解して、10問目の問題を解くときには、残りの問題は1問。
         //この時に、「次の問題へ」ボタンを押すと、画像が次々と変わっていってしまう。
