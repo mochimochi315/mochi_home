@@ -92,6 +92,8 @@ let kyouka_data_atai2 = query_data5.kyouka;
 
 let tangen_data_atai2 = query_data5.tangen;
 
+let tangen2_data_atai2 = query_data5.tangen2;
+
 //以下のコードは、「レベル○を全問正解しました。」の表示の時に使用している。
 let level_data_atai2 = query_data5.level;
 
@@ -104,7 +106,7 @@ let level_data_atai2 = query_data5.level;
 function modoru() {
 
     //テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
-    let query_data6 = `tangen=${tangen_data_atai2}` + "&" + `kyouka=${kyouka_data_atai2}` + "&" + `gakunen=${gakunen_data_atai2}`;
+    let query_data6 = `tangen=${tangen2_data_atai2}` + "&" + `kyouka=${kyouka_data_atai2}` + "&" + `gakunen=${gakunen_data_atai2}`;
 
     let to_level_url3 = ('level.html?' + query_data6);
 

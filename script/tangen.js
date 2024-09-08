@@ -39,16 +39,22 @@ function GetQueryString(result) {
     return result;
 }
 
+let tangen_number;
 
 // カスタム関数showAttributeを定義
 function showAttribute(element) {
 
-
-    // href属性を取得
     const hrefValue2 = element.getAttribute('href');
 
-    // 属性値をアラートで表示
-    //alert('取得したhref属性の値: ' + hrefValue);
+    let parts = hrefValue2.split("tangen="); // "tangen="で文字列を分割
+
+    tangen_number = parts[1]; // 右側の文字列を取り出す
+
+    //以下のコードは、うまくいかなかったが、参考のために残してある。
+    //うまくいかない原因は、「5_shakai.js」ファイルが、「tangen.js」ファイルの後に
+    //読み込まれているためだと思われる。
+    //mondai_hanteiオプジェクトの中を探して、hanteiの内容（okかnoか）を変数result4に入れている。
+    //let fname_ichibu2 = tangen_mei.find(item => item.number === tangen_number).fname_ichibu;
 
     let to_level_url2;
 
@@ -56,17 +62,13 @@ function showAttribute(element) {
     if (hrefValue2 === '#') {
         to_level_url2 = ('kyouka.html?' + query_data5);
     } else {
-        to_level_url2 = (hrefValue2 + '&' + query_data4);
+        //以下のコードは、うまくいかなかったが、参考のために残してある。
+        //to_level_url2 = ('level.html?tangen=' + fname_ichibu2 + '&' + query_data4);
+        to_level_url2 = ('level.html?tangen=' + tangen_number + '&' + query_data4);
     }
 
     // リンク先を動的に設定
     window.location.href = to_level_url2;
+
 }
-
-
-
-
-
-
-
 
