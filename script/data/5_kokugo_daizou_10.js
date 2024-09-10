@@ -1,7 +1,7 @@
 const mondai = [
     { number: 1, question: 'たとえば、第1場面が1965年だっとします。第2場面は、何年でしょう。', answer: '1966', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 2, question: 'たとえば、第1場面が1965年だっとします。第3場面は、何年でしょう。', answer: '1967', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 3, question: 'たとえば、第1場面が1965年だっとします。第3場面は、何年でしょう。', answer: '1968', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 3, question: 'たとえば、第1場面が1965年だっとします。第4場面は、何年でしょう。', answer: '1968', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 4, question: '残雪は、いつの季節にやって来ますか。', answer: 'あき', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 5, question: 'P92。じいさんは、なぜ、「ほほう、これはすばらしい！」と言ったのですか。<BR>（　　　）がうまく手に入ったから。', answer: 'いきているがん', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 6, question: 'P92。付近には一羽もいなくなったのはなぜですか。<BR>がんの群れが危険を感じて、（　　　）を変えたから', answer: 'えば', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
