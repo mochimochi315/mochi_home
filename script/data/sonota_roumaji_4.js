@@ -1,13 +1,10 @@
 const mondai = [
-    { number: 1, question: '「ざ」をローマ字で書きましょう。', answer: 'za', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 2, question: '「じ」をローマ字で書きましょう。', answer: 'zi', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 3, question: '「ず」をローマ字で書きましょう。', answer: 'zu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 4, question: '「ぜ」をローマ字で書きましょう。', answer: 'ze', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 5, question: '「ぞ」をローマ字で書きましょう。', answer: 'zo', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 6, question: '「だ」をローマ字で書きましょう。', answer: 'da', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 7, question: '「じ」をローマ字で書きましょう。', answer: 'di', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 8, question: '「づ」をローマ字で書きましょう。', answer: 'du', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 9, question: '「で」をローマ字で書きましょう。', answer: 'de', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 10, question: '「ど」をローマ字で書きましょう。', answer: 'do', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 11, question: '「ば」をローマ字で書きましょう。', answer: 'ba', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 1, question: '「ま」をローマ字で書きましょう。', answer: 'ma', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 2, question: '「み」をローマ字で書きましょう。', answer: 'mi', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 3, question: '「む」をローマ字で書きましょう。', answer: 'mu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 4, question: '「め」をローマ字で書きましょう。', answer: 'me', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 5, question: '「も」をローマ字で書きましょう。', answer: 'mo', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 6, question: '「や」をローマ字で書きましょう。', answer: 'ya', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 7, question: '「ゆ」をローマ字で書きましょう。', answer: 'yu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 8, question: '「よ」をローマ字で書きましょう。', answer: 'yo', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
