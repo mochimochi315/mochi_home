@@ -122,8 +122,34 @@
 
 		let level_data_atai3 = query_data7.level;
 
-		//テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
-		let query_data8 = `${gakunen_data_atai3}_` + `${kyouka_data_atai3}_` + `${tangen_data_atai3}_` + `${level_data_atai3}.js`;
+
+		let query_data8;
+
+		//教科名が、「その他」の場合には、ファイル名には、学年をつけないようにした。
+		if (kyouka_data_atai3 === "sonota") {
+
+			query_data8 = `${kyouka_data_atai3}_` + `${tangen_data_atai3}_` + `${level_data_atai3}.js`;
+
+		} else {
+
+			//テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
+			query_data8 = `${gakunen_data_atai3}_` + `${kyouka_data_atai3}_` + `${tangen_data_atai3}_` + `${level_data_atai3}.js`;
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		function GetQueryString(result) {
 			if (1 < window.location.search.length) {
