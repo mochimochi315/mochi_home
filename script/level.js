@@ -9,12 +9,22 @@ let kyouka_data_atai2 = query_data5.kyouka;
 
 let tangen_data_atai2 = query_data5.tangen;
 
+let query_data8;
 
 
 //テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
 let query_data7 = `kyouka=${kyouka_data_atai2}` + "&" + `gakunen=${gakunen_data_atai2}`;
 
-let query_data8 = `${gakunen_data_atai2}_` + `${kyouka_data_atai2}.js`
+//教科名が、「その他」の場合には、ファイル名には、学年をつけないようにした。
+if (kyouka_data_atai2 === "sonota") {
+
+    query_data8 = `${kyouka_data_atai2}.js`
+
+} else {
+
+    query_data8 = `${gakunen_data_atai2}_` + `${kyouka_data_atai2}.js`
+
+}
 
 //window.alert(query_data8);
 
