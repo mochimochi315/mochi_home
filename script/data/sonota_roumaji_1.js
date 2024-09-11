@@ -8,15 +8,5 @@ const mondai = [
     { number: 7, question: '「き」をローマ字で書きましょう。', answer: 'ki', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 8, question: '「く」をローマ字で書きましょう。', answer: 'ku', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 9, question: '「け」をローマ字で書きましょう。', answer: 'ke', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 10, question: '「こ」をローマ字で書きましょう。', answer: 'ko', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: , question: '', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 20, question: '「と」をローマ字で書きましょう。', answer: 'to', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 10, question: '「こ」をローマ字で書きましょう。', answer: 'ko', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
