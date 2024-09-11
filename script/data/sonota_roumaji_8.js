@@ -1,7 +1,12 @@
 const mondai = [
-    { number: 1, question: '「ぱ」をローマ字で書きましょう。', answer: 'pa', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 2, question: '「ぴ」をローマ字で書きましょう。', answer: 'pi', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 3, question: '「ぷ」をローマ字で書きましょう。', answer: 'pu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 4, question: '「ぺ」をローマ字で書きましょう。', answer: 'pe', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 5, question: '「ぽ」をローマ字で書きましょう。', answer: 'po', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 1, question: '「ぎょ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 2, question: '「じゃ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 3, question: '「じゅ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 4, question: '「じょ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 5, question: '「ぢゃ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 6, question: '「ぢゅ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 7, question: '「ぢょ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 8, question: '「びゃ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 9, question: '「びゅ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 10, question: '「びょ」をローマ字で書きましょう。', answer: '', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
