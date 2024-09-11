@@ -6,6 +6,6 @@ const mondai = [
     { number: 5, question: '「ぎゃ」をローマ字で書きましょう。', answer: 'gyu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 6, question: '「ぎょ」をローマ字で書きましょう。', answer: 'gyo', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 7, question: '「じゃ」をローマ字で書きましょう。', answer: 'zya', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 8, question: '「じゅ」をローマ字で書きましょう。', answer: 'ayu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 8, question: '「じゅ」をローマ字で書きましょう。', answer: 'zyu', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 9, question: '「じょ」をローマ字で書きましょう。', answer: 'zyo', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
