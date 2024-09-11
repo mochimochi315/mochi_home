@@ -17,6 +17,8 @@ let attack;
 
 //正解するごとに、オブジェクトmondai_hantei内のhanteiが、「"ok"」に変わっていく。
 //この配列の中に「ok」がある問題は、出題されないようにしている。
+//出題数は、レベル1つにつき、最高20題まで。21題以上出題したい場合には、以下のコードの修正が必要。
+//または、「mondai_hantei」をjsファイルにして、100題までOKにして、jsファイルを読み込む形にすると良い。
 let mondai_hantei = [
     { number: 1, hantei: "no" },
     { number: 2, hantei: "no" },
@@ -28,6 +30,16 @@ let mondai_hantei = [
     { number: 8, hantei: "no" },
     { number: 9, hantei: "no" },
     { number: 10, hantei: "no" }
+    { number: 11, hantei: "no" }
+    { number: 12, hantei: "no" }
+    { number: 13, hantei: "no" }
+    { number: 14, hantei: "no" }
+    { number: 15, hantei: "no" }
+    { number: 16, hantei: "no" }
+    { number: 17, hantei: "no" }
+    { number: 18, hantei: "no" }
+    { number: 19, hantei: "no" }
+    { number: 20, hantei: "no" }
 ];
 
 console.log(mondai_hantei);
