@@ -1,13 +1,9 @@
 const mondai = [
-    { number: 1, question: '4×0＝', answer: '0', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 2, question: '4×1＝', answer: '4', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 3, question: '4×2＝', answer: '8', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 4, question: '4×3＝', answer: '12', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 5, question: '4×4＝', answer: '16', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 6, question: '4×5＝', answer: '20', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 7, question: '4×6＝', answer: '24', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 8, question: '4×7＝', answer: '28', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 9, question: '4×8＝', answer: '32', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 10, question: '4×9＝', answer: '36', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 11, question: '4×10＝', answer: '40', image_name: '', etc_1: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 1, question: '3×0＝', answer: '0', image_name: '', answer2: '0', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 2, question: '3×6＝', answer: '18', image_name: '', answer2: '18', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 3, question: '3×7＝', answer: '21', image_name: '', answer2: '21', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 4, question: '3×8＝', answer: '24', image_name: '', answer2: '24', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 5, question: '3×9＝', answer: '27', image_name: '', answer2: '27', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 6, question: '3×10＝', answer: '30', image_name: '', answer2: '30', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 7, question: '4×0＝', answer: '0', image_name: '', answer2: '0', etc_2: '', etc_3: '', etc_4: ''}
 ];
