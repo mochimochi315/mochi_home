@@ -19,7 +19,7 @@ let attack;
 //この配列の中に「ok」がある問題は、出題されないようにしている。
 //出題数は、レベル1つにつき、最高20題まで。21題以上出題したい場合には、以下のコードの修正が必要。
 //または、「mondai_hantei」をjsファイルにして、100題までOKにして、jsファイルを読み込む形にすると良い。
-let mondai_hantei = [
+/*let mondai_hantei = [
     { number: 1, hantei: "no" },
     { number: 2, hantei: "no" },
     { number: 3, hantei: "no" },
@@ -40,7 +40,7 @@ let mondai_hantei = [
     { number: 18, hantei: "no" },
     { number: 19, hantei: "no" },
     { number: 20, hantei: "no" }
-];
+];*/
 
 //console.log(mondai_hantei);
 
@@ -267,7 +267,7 @@ function answerQuiz2() {
         //以下のコードでは、例えば、３番の問題を出題したときに、その３番の答えの文字数を調べて、変数kotaeno_nagasaに代入している。
         let kotaeno_nagasa = String(result3).length
 
-        document.getElementById('kaitou').placeholder = '答えは、ひらがな' + kotaeno_nagasa + '文字';
+        document.getElementById('kaitou').placeholder = '答えは、ひらがな（カタカナ、数字）' + kotaeno_nagasa + '文字';
 
         //配列オブジェクトにある「画像ファイルのファイル名」を変数に入れている。
         let image_file_name = mondai.find(item => item.number === attack).image_name;
@@ -375,7 +375,25 @@ function answerQuiz2() {
 
                 } else {
 
-                    document.getElementById('output5').textContent = '不正解です。';
+                    //以下のコードでは、例えば、３番の問題を出題したときに、その３番のanswer2を取り出して、result5変数に代入している。
+                    const result5 = mondai.find(item => item.number === attack).answer2;
+
+                    //answer2が、空欄の場合には、間違えた場合には、「不正解です。」を表示する。
+                    if (result5 === "") {
+
+                        document.getElementById('output5').textContent = '不正解です。';
+
+                    } else {
+                        //answer2が空欄でない場合には、正解を示すが、その問題はシャッフルされる。
+                        //ただし、最後の問題の場合には、シャッフルされても、同じ問題が出題されるので、答えを丸写しすることになる。
+                        document.getElementById('output5').textContent = '不正解です。正解は、' + result5 + 'です。';
+
+                        setTimeout(() => {
+                            // 3秒後に画像を切り替える。問題画像に戻す。
+                            answerQuiz2();
+                        }, 3000); // 3秒（2000ミリ秒）後に実行
+
+                    }
 
                     //不正解画像に対するランダム処理
                     //不正解画像は、配列から受け取る。配列は0から始まるので、以下のコードに「+1」をつけていない。
