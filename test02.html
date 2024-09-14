@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Form</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- JavaScriptコードをここに記述 -->
+    <script>
+        // フォームの送信イベントにリスナーを設定
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // フォームのデフォルト動作をキャンセル
+
+            // フォームのデータを取得
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            };
+
+            // Google Apps ScriptのウェブアプリURL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxv56Df-Dar0uhskTzbrtSKTVBjpj-J-lqPf73rfbtHx_QG_Fx-o6m5MN_pETz6YQfxhA/exec';
+
+            // データをPOSTリクエストで送信
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'cors',  // CORSリクエストを許可
+                body: JSON.stringify(formData),  // フォームのデータをJSON形式で送信
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.text())  // レスポンスをテキストとして処理
+                .then(result => alert('Success: ' + result))  // 成功時にアラート表示
+                .catch(error => console.error('Error:', error));  // エラー時にコンソールに出力
+        });
+    </script>
+</body>
+
+</html>
