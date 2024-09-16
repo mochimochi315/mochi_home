@@ -330,6 +330,26 @@ function answerQuiz2() {
             //window.alert("解答欄の答え=" + search);
 
 
+            // //以下は、現在のボタンの色を16進数で取得するコード。いつか使うかもしれないので、残している。
+            // const submitButton = document.getElementById('submitBtn');
+
+            // // RGB値を16進数に変換する関数
+            // function rgbToHex(rgb) {
+            //     const rgbValues = rgb.match(/\d+/g); // RGBの数値部分を取得
+            //     const hex = rgbValues.map(function (value) {
+            //         const hexValue = parseInt(value).toString(16); // 10進数を16進数に変換
+            //         return hexValue.padStart(2, '0'); // 2桁になるように0埋め
+            //     }).join('');
+            //     return `#${hex.toUpperCase()}`; // #をつけて大文字に変換
+            // }
+
+            // // // 現在のボタンの背景色を取得して16進数形式に変換
+            // const currentColorRGB = window.getComputedStyle(submitButton).backgroundColor;
+            // const currentColorHex = rgbToHex(currentColorRGB);
+            // alert("現在のボタンの色は: " + currentColorHex);
+
+
+
             //以下のif文を使って、正解した後で、次の問題に進まずに、解答ボタンを押しても、何も動作しないようにした。
             //そのために、以下のコードで、配列から「ok」か「no」かを読み取っている。
             //この場所のコードに来ている時点で、通常は、「no」のはずである。
