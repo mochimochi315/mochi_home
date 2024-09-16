@@ -11,6 +11,27 @@ let tangen_data_atai2 = query_data5.tangen;
 
 let query_data8;
 
+//ダイアログボックスで、ユーザー名を入力させる。
+//登録されていないユーザー名の場合には、「ゲスト」と入力する。
+var result_user = prompt("ユーザー名を入力してください");
+if (result_user === null) {
+    result_user = "ゲスト";
+} else {
+
+    // findメソッドを使って、指定した値を見つける
+    const foundValue = user_mei.find(value => value === result_user);
+
+    // 結果を表示する
+    if (foundValue !== undefined) {
+        console.log('値が見つかりました:', foundValue);
+    } else {
+        result_user = "ゲスト";
+    }
+}
+
+//ユーザー名は、全角文字列なので、エンコードする。
+const user_mei2 = encodeURIComponent(result_user);
+console.log(user_mei2);
 
 //テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
 let query_data7 = `kyouka=${kyouka_data_atai2}` + "&" + `gakunen=${gakunen_data_atai2}`;
@@ -69,7 +90,7 @@ function showAttribute(element) {
     //「shutsudai.html」から、「level.html」に戻る時に、tangen2データが必要になるため、
     //以下のように記述した。
     let query_data6 = `tangen=${fname_ichibu2}` + "&" + `kyouka=${kyouka_data_atai2}` +
-        "&" + `gakunen=${gakunen_data_atai2}` + "&" + `tangen2=${tangen_data_atai2}`;
+        "&" + `gakunen=${gakunen_data_atai2}` + "&" + `tangen2=${tangen_data_atai2}` + "&" + `user_mei=${user_mei2}`;
 
 
     // href属性を取得

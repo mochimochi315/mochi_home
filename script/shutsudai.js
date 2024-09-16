@@ -13,7 +13,9 @@ let msg_id3;
 let result4;
 let attack;
 
-//window.alert(img_question_kazu);
+
+//合格ボタンを非表示にしておく。
+document.getElementById('sendBtn').style.display = 'none';
 
 //正解するごとに、オブジェクトmondai_hantei内のhanteiが、「"ok"」に変わっていく。
 //この配列の中に「ok」がある問題は、出題されないようにしている。
@@ -106,8 +108,32 @@ let tangen_data_atai2 = query_data5.tangen;
 
 let tangen2_data_atai2 = query_data5.tangen2;
 
+let user_mei3 = query_data5.user_mei
+
+//エンコードされている名前をデコードする。
+let deco_user_mei3 = decodeURIComponent(user_mei3);
+
+let nickname;
+
+//名前が「ゲスト」の場合には、「ゲストさん」、それ以外の名前の場合には、「ユーザーさん」にする。
+if (deco_user_mei3 === "ゲスト") {
+
+    nickname = deco_user_mei3;
+
+} else {
+
+    nickname = "ユーザー";
+
+}
+
+//ユーザー名を問題画像の上に表示させる。
+document.getElementById('output6').textContent = nickname + 'さん';
+
 //以下のコードは、「レベル○を全問正解しました。」の表示の時に使用している。
 let level_data_atai2 = query_data5.level;
+
+//Googleスプレッドシートの列名を指定する。
+let tangen_level = tangen_data_atai2 + "_" + level_data_atai2;  //suisangyou_2
 
 //以下のfunction modoru() は、「shutstdai.html」から、「level.html」に戻るためのコード。
 //このコードは、正しく動作するが、コードを「level.js」ファイルにコピーして、
@@ -232,6 +258,8 @@ function answerQuiz2() {
             //以下の書き方は、JavaScript特有の書き方で、While文の中で、"no"の場所が見つかったら、
             //While文から抜け出すようにしている。VBAでは、breakを使って抜け出さなくても、
             //「 (result4 === "no")」になった時点で自動的に抜け出してくれるが、JavaScriptのWhile文は、そうはいかないらしい。
+            //初期に作成したコードでは、mondai_suuを使わずに、「10」を使っていたため、無限ループに陥っていたのかもしれない。
+            //原因不明。今は、以下のコードをコメントにしても、正しく動作するかもしれない。
             if (result4 === "no") {
                 break;
 
@@ -475,9 +503,17 @@ function answerQuiz2() {
                 //問題数を書き換える場合には、ここを編集する。
                 if (seikaisuu === mondai_suu) {
 
-                    const zenmon_seikai = 'レベル' + level_data_atai2 + 'を全問正解しました。この画面を先生に見せてください。'
-                    document.getElementById('output5').textContent = zenmon_seikai;
+                    if (deco_user_mei3 === "ゲスト") {
+                        const zenmon_seikai = 'レベル' + level_data_atai2 + 'を全問正解しました。この画面を先生に見せてください。'
+                        document.getElementById('output5').textContent = zenmon_seikai;
 
+                    } else {
+
+                        const zenmon_seikai = 'レベル' + level_data_atai2 + 'を全問正解しました。合格ボタンを押してください。'
+                        document.getElementById('output5').textContent = zenmon_seikai;
+                        document.getElementById('sendBtn').style.display = 'inline'; // インライン要素として再表示
+
+                    }
 
                 } //else if (seikaisuu > 10) {
                 //document.getElementById('output5').textContent = 'すでに全問正解しています。まだまだ続けるのですね。すばらしいです。';
