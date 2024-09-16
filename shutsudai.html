@@ -46,6 +46,7 @@
 		<div class="container">
 			<main>
 
+				<p id="output6">ここにユーザー名が表示されます。</p>
 
 				<div class="mondai_img">
 					<img src="images/Question/1017.png">
@@ -55,7 +56,10 @@
 
 				<p id="choice2">問題文スタート</p>
 
-				<p id="output5">正解、不正解、全問正解した時のメッセージ</p>
+				<div id="goukaku">
+					<p id="output5">正解、不正解、全問正解した時のメッセージ</p>
+					<button id="sendBtn">合格</button>
+				</div>
 
 				<p id="output4">正解数がここに表示される。</p>
 
@@ -197,6 +201,32 @@
 			// 作成した <script> タグを <head> に追加して読み込む
 			document.head.appendChild(script);
 		};
+	</script>
+	<script>
+		document.getElementById("sendBtn").addEventListener("click", function () {
+			// 送信する決められたデータ
+			const formData = {
+				name: deco_user_mei3,
+				kyouka: kyouka_data_atai2,
+				tangen: tangen_level
+			};
+
+			// Google Apps ScriptのURL
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbzswzLm4MqKzMf9TNhtT00aYbGarc81tpb7v4bnwwcZ0pIAGn3d6rIEbFbH3eCmFC68lQ/exec'; // 自分のスクリプトIDに置き換え
+
+			// fetchでPOSTリクエストを送信
+			fetch(scriptURL, {
+				method: 'POST',
+				mode: 'no-cors',  // CORSリクエストを使用しない
+				body: JSON.stringify(formData),  // データをJSON形式で送信
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+				.then(response => response.text())  // レスポンスをテキストとして処理
+				.then(result => console.log('Success:', result))  // 成功時にコンソールに表示
+				.catch(error => console.error('Error:', error));  // エラー時にコンソールに出力
+		});
 	</script>
 
 
