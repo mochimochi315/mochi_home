@@ -57,8 +57,9 @@
 				<p id="choice2">問題文スタート</p>
 
 				<div id="goukaku">
-					<p id="output5">正解、不正解、全問正解した時のメッセージ</p>
+					<span id="output5">正解、不正解、全問正解した時のメッセージ</span>
 					<button id="sendBtn">合格</button>
+
 				</div>
 
 				<p id="output4">正解数がここに表示される。</p>
@@ -235,8 +236,8 @@
 			event.preventDefault(); // フォーム送信を防止
 			// ボタンを無効化
 			submitButton.disabled = true;
-			// ボタンの色を赤に変更
-			submitButton.style.backgroundColor = '#FFC0CB';
+			// ボタンの色を黄色に変更
+			submitButton.style.backgroundColor = '#FFFF00';
 
 			// 1秒後にボタンを再度有効にする
 			setTimeout(function () {
