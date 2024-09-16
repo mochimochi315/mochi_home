@@ -62,7 +62,7 @@ main {
 }
 
 input[type="text"] {
-width: 300px;
+	width: 300px;
 }
 
 .btn {
@@ -119,6 +119,10 @@ input[type="submit"] {
 
 	input[type="text"] {
 		width: 400px;
+	}
 
+	.goukaku {
+		display: flex;
+		flex-flow: row;
 	}
 }
