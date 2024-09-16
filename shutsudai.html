@@ -65,7 +65,7 @@
 
 				<form action="#" id="form">
 					<input type="text" name="kaitouran" id="kaitou" placeholder="答えは、ひらがな〇文字">
-					<input type="submit" value="解答する">
+					<input type="submit" value="解答する" id="submitBtn">
 				</form>
 
 				<div class="btn_area">
@@ -212,7 +212,7 @@
 			};
 
 			// Google Apps ScriptのURL
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbzswzLm4MqKzMf9TNhtT00aYbGarc81tpb7v4bnwwcZ0pIAGn3d6rIEbFbH3eCmFC68lQ/exec'; // 自分のスクリプトIDに置き換え
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbwnS9oh5ze92lWjhK4KadxTfmwwE1BL9OeyzCsu0Jrya3XaZRuYsfQNhPOM7G9dZPHtlw/exec'; // 自分のスクリプトIDに置き換え
 
 			// fetchでPOSTリクエストを送信
 			fetch(scriptURL, {
@@ -226,6 +226,24 @@
 				.then(response => response.text())  // レスポンスをテキストとして処理
 				.then(result => console.log('Success:', result))  // 成功時にコンソールに表示
 				.catch(error => console.error('Error:', error));  // エラー時にコンソールに出力
+		});
+	</script>
+	<script>
+		const submitButton = document.getElementById('submitBtn');
+
+		document.getElementById('form').addEventListener('submit', function (event) {
+			event.preventDefault(); // フォーム送信を防止
+			// ボタンを無効化
+			submitButton.disabled = true;
+			// ボタンの色を赤に変更
+			submitButton.style.backgroundColor = '#FFC0CB';
+
+			// 1秒後にボタンを再度有効にする
+			setTimeout(function () {
+				submitButton.disabled = false;
+				// 元の色（緑）に戻す
+				submitButton.style.backgroundColor = '#F0F0F0';
+			}, 1000); // 3000ミリ秒 = 3秒
 		});
 	</script>
 
