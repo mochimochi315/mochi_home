@@ -204,7 +204,46 @@
 		};
 	</script>
 	<script>
+		//以下のコードは、問題なく動作していたが、不要な記述も含まれていたので、使用しないことにした。
+		//ただし、参考になるため、一応残してある。
+		// document.getElementById("sendBtn").addEventListener("click", function () {
+		// 	// 送信する決められたデータ
+		// 	const formData = {
+		// 		name: deco_user_mei3,
+		// 		kyouka: kyouka_data_atai2,
+		// 		tangen: tangen_level
+		// 	};
+
+		// 	// Google Apps ScriptのURL
+		// 	const scriptURL = 'https://script.google.com/macros/s/AKfycbwnS9oh5ze92lWjhK4KadxTfmwwE1BL9OeyzCsu0Jrya3XaZRuYsfQNhPOM7G9dZPHtlw/exec'; // 自分のスクリプトIDに置き換え
+
+		// 	// fetchでPOSTリクエストを送信
+		// 	fetch(scriptURL, {
+		// 		method: 'POST',
+		// 		mode: 'no-cors',  // CORSリクエストを使用しない
+		// 		body: JSON.stringify(formData),  // データをJSON形式で送信
+		// 		headers: {
+		// 			'Content-Type': 'application/json'
+		// 		}
+		// 	})
+		// 		.then(response => response.text())  // レスポンスをテキストとして処理
+		// 		.then(result => console.log('Success:', result))  // 成功時にコンソールに表示
+
+		// 		.catch(error => console.error('Error:', error));  // エラー時にコンソールに出力
+
+		// });
+	</script>
+	<script>
+		//mode: 'no-cors' では、リクエストのヘッダーにカスタムヘッダー（例えば 'Content-Type': 'application/json'）を
+		//指定することができません。'no-cors'モードでは、送信できるデータは限られており、
+		//基本的な POST リクエストのみが許可されています。
+		//また、'no-cors' モードを使用すると、レスポンスの内容 (response.text()) を取得することができません。
+		//成功時でも、レスポンスは未定義のままになり、データの処理ができなくなります。
+		//mode: 'no-cors' を使用する場合、カスタムヘッダーは削除する必要があります。
+		//また、レスポンスを処理できないので、thenブロックも不要です。
+		//以下のコードは、「no-cors」モードの場合の書き方。
 		document.getElementById("sendBtn").addEventListener("click", function () {
+
 			// 送信する決められたデータ
 			const formData = {
 				name: deco_user_mei3,
@@ -219,14 +258,14 @@
 			fetch(scriptURL, {
 				method: 'POST',
 				mode: 'no-cors',  // CORSリクエストを使用しない
-				body: JSON.stringify(formData),  // データをJSON形式で送信
-				headers: {
-					'Content-Type': 'application/json'
-				}
+				body: JSON.stringify(formData)  // データをJSON形式で送信
+				// headersの設定は no-corsモードでは削除
 			})
-				.then(response => response.text())  // レスポンスをテキストとして処理
-				.then(result => console.log('Success:', result))  // 成功時にコンソールに表示
-				.catch(error => console.error('Error:', error));  // エラー時にコンソールに出力
+				.catch(error => console.error('Error:', error))  // エラー時にコンソールに出力
+				.finally(() => {
+					// 成功・失敗に関係なくメッセージを表示
+					output5.textContent = 'OKを送信しました。';
+				});
 		});
 	</script>
 	<script>
