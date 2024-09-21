@@ -15,7 +15,7 @@ let attack;
 
 
 //合格ボタンを非表示にしておく。
-document.getElementById('sendBtn').style.display = 'none';
+//document.getElementById('sendBtn').style.display = 'none';
 
 //正解するごとに、オブジェクトmondai_hantei内のhanteiが、「"ok"」に変わっていく。
 //この配列の中に「ok」がある問題は、出題されないようにしている。
@@ -459,39 +459,29 @@ function answerQuiz2() {
                         // .mondai_imgクラスの子要素のimgタグ（img要素）を取得
                         let imgElement = document.querySelector('.mondai_img img');
 
-                        // src 属性のイメージファイルを固定された不正解画像に変更する。
-                        imgElement.src = "images/zannen/3000.png";
+                        //問題文専用の画像がない場合のみ、以下の処理を行う。
+                        if (image_file_name === "") {
+                            // src 属性のイメージファイルを固定された不正解画像に変更する。
+                            imgElement.src = "images/zannen/3000.png";
 
-                        //問題文専用の画像がある場合の処理（３回連続で間違えた場合）
-                        if (image_file_name != "") {
-                            setTimeout(() => {
-                                // 10秒後に画像を切り替える。問題画像に戻す。
-                                imgElement.src = "images/img_data/" + `${image_file_name}`;
-                            }, 10000); // 10秒（10000ミリ秒）後に実行
                         }
-
 
                     } else {
 
-                        // .mondai_imgクラスの子要素のimgタグ（img要素）を取得
+                        /// .mondai_imgクラスの子要素のimgタグ（img要素）を取得
                         let imgElement = document.querySelector('.mondai_img img');
 
-                        // src 属性のイメージファイルをランダムな不正解画像に変更する。
-                        imgElement.src = img_zannen[img_id3];
+                        //問題文専用の画像がない場合のみ、以下の処理を行う。
+                        if (image_file_name === "") {
 
-                        //問題文専用の画像がある場合の処理
-                        if (image_file_name != "") {
+                            // src 属性のイメージファイルをランダムな不正解画像に変更する。
+                            imgElement.src = img_zannen[img_id3];
 
-                            setTimeout(() => {
-                                // 3秒後に画像を切り替える。問題画像に戻す。
-                                imgElement.src = "images/img_data/" + `${image_file_name}`;
-                            }, 3000); // 3秒（3000ミリ秒）後に実行
                         }
 
                     }
 
                     //window.alert(img_zannen[img_id3]);
-
 
                     //不正解メッセージに対するランダム変数処理
                     //「msg_id」ではなく、「const msg_id2」にしなくてはならない。
@@ -499,8 +489,15 @@ function answerQuiz2() {
                     let msg_id3 = Math.floor(Math.random() * msg_zannen_kazu);
 
                     if (machigaetakazu >= 2) {
-                        //不正解のメッセージを表示する（３問以上間違えた場合）。
-                        document.getElementById('output').textContent = "先生にヒントをもらいましょう。";
+
+                        //answer2が空欄の時には、
+                        //「先生にヒントをもらいましょう。」を表示させる。
+                        if (result5 === "") {
+
+                            //不正解のメッセージを表示する（３問以上間違えた場合）。
+                            document.getElementById('output').textContent = "先生にヒントをもらいましょう。";
+
+                        }
 
                     } else {
                         //不正解のメッセージを表示する。
