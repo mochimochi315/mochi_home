@@ -71,7 +71,8 @@
 				<p id="output4">正解数がここに表示される。</p>
 
 				<form action="#" id="form">
-					<input type="text" name="kaitouran" id="kaitou" placeholder="答えは、ひらがな〇文字">
+					<!--オートコンプリートをOFFにしている。-->
+					<input type="text" name="kaitouran" id="kaitou" autocomplete="off" placeholder="答えは、ひらがな〇文字">
 					<input type="submit" value="解答する" id="submitBtn">
 				</form>
 
@@ -299,13 +300,13 @@
 			// ボタンを無効化
 			submitButton.disabled = true;
 			// ボタンの色を黄色に変更
-			submitButton.style.backgroundColor = '#FFFF00';
+			//submitButton.style.backgroundColor = '#FFFF00';
 
 			// 1秒後にボタンを再度有効にする
 			setTimeout(function () {
 				submitButton.disabled = false;
 				// 元の色（緑）に戻す
-				submitButton.style.backgroundColor = '#F0F0F0';
+				//submitButton.style.backgroundColor = '#F0F0F0';
 			}, 1000); // 1000ミリ秒 = 1秒
 		});
 	</script>
