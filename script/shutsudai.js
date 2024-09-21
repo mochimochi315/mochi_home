@@ -186,6 +186,10 @@ function modoru() {
 
 function answerQuiz2() {
 
+    // answer2が空欄でない場合、不正解だった場合には、解答が表示され、さらに、自動的に別の問題に切り替わるので、
+    //「次の問題へ」ボタンを無効化してある。そのため、正解した場合には、以下のコードで有効に戻している。
+    document.getElementById('nextBtn').disabled = false;
+
     //問題数を調べる
     const mondai_suu = mondai.length;
 
@@ -441,6 +445,9 @@ function answerQuiz2() {
                         //answer2が空欄でない場合には、正解を示すが、その問題はシャッフルされる。
                         //ただし、最後の問題の場合には、シャッフルされても、同じ問題が出題されるので、答えを丸写しすることになる。
                         document.getElementById('output5').textContent = '不正解です。正解は、' + result5 + 'です。';
+
+                        // answer2が空欄でない場合には、「次の問題へ」ボタンを無効化する。
+                        document.getElementById('nextBtn').disabled = true;
 
                         setTimeout(() => {
                             // 3秒後に画像を切り替える。問題画像に戻す。

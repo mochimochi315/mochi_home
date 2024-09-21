@@ -11,9 +11,27 @@ let tangen_data_atai2 = query_data5.tangen;
 
 let query_data8;
 
+
+// セッションストレージから過去の入力を取得
+let previousInput = sessionStorage.getItem('result_user');
+
 //ダイアログボックスで、ユーザー名を入力させる。
 //登録されていないユーザー名の場合には、「ゲスト」と入力する。
-var result_user = prompt("ユーザー名を入力してください");
+//|| は論理 OR 演算子と呼ばれ、次のような動作をします。
+//左側の値が「truthy」（有効な値：空でない文字列、数値、オブジェクトなど）なら、左側の値を返します。
+//左側の値が「falsy」（無効な値：null、undefined、false、0、NaN、空の文字列 "" など）なら、右側の値を返します。
+var result_user = prompt("ユーザー名を入力してください", previousInput || "");
+
+// キャンセルしなければ新しい入力をセッションストレージに保存
+if (result_user !== null) {
+    sessionStorage.setItem('result_user', result_user);
+    //alert(`入力が保存されました: ${result_user}`);
+}
+
+
+//ユーザー名が空欄の場合には、「ゲスト」にする。
+//空欄でない場合には、登録されているユーザーかどうかを調べ、
+//登録されていない場合には、「ゲスト」にする。
 if (result_user === null) {
     result_user = "ゲスト";
 } else {
