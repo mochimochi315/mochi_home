@@ -15,7 +15,7 @@ let attack;
 
 
 //合格ボタンを非表示にしておく。
-//document.getElementById('sendBtn').style.display = 'none';
+document.getElementById('sendBtn').style.display = 'none';
 
 //正解するごとに、オブジェクトmondai_hantei内のhanteiが、「"ok"」に変わっていく。
 //この配列の中に「ok」がある問題は、出題されないようにしている。
