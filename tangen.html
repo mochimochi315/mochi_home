@@ -10,6 +10,8 @@
 	<title>テスト対策パーク mochiお</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/tangen.css">
+
 </head>
 
 <body>
@@ -275,26 +277,83 @@
 		}*/
 
 		//以下のコードだと割とうまく表示されるが、「clear cache」を実行しないと表示されない場合もある。
+		//以下のコードでは、例えば、「query_data8」変数で、「5_shakai.js」ファイルを指定して、
+		//<script　src="5_shakai.js"><script>タグを動的に生成している。
 		function loadScript(src) {
 			return new Promise((resolve, reject) => {
 				const script = document.createElement('script');
 				script.src = src;
 				script.defer = true;
+				//以下は、<script　src="5_shakai.js"><script>タグを動的に生成された後に発生するイベントを設定している。
+				//以下のコードでは、 <script>タグの読み込みが完了した時に、resolve() を呼び出す設定を行っている。
+				//実際には、この時点では、設定のみで、<script>タグを動的に生成はしていない。
 				script.onload = () => resolve();
 				script.onerror = () => reject(new Error(`Script load error for ${src}`));
+				//以下のコードで、実際に<script>タグが生成され、読み込まれる。
 				document.head.appendChild(script);
 			});
 		}
 
+		let tangen_number_2;
 
-		// 使用例
-		loadScript('script/data/' + query_data8)
-			.then(() => {
-				console.log(window.mondai); // mondai.js内の配列にアクセス
-			})
-			.catch(error => {
-				console.error(error);
-			});
+		//「5_shakai.js」ファイルを読み込む。
+		//「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
+		document.addEventListener("DOMContentLoaded", () => {
+			loadScript('script/data/' + query_data8)
+				.then(() => {
+					console.log("tangen_mei=" + tangen_mei); // tangen_mei内の配列にアクセス
+				})
+				.then(() => {
+					// スクリプトの読み込み後に `tangen_mei` が使用可能になる
+					if (typeof tangen_mei !== 'undefined') {
+						console.log(`読み込まれた要素数: ${tangen_mei.length}`); // 要素数を表示
+						//要素数の次の単元番号を指定する。この番号のタグから削除していく。
+						tangen_number_2 = tangen_mei.length + 1;
+
+					} else {
+						console.error('tangen_mei が定義されていません');
+					}
+				})
+
+				.then(async () => {
+
+					for (let i = tangen_number_2; i < 15; i++) {
+						// 繰り返し処理をここに記述
+						console.log(`ループ回数: ${i + 1}`);
+
+						async function checkScriptExistence(src) {
+							try {
+								const response = await fetch(src, { method: 'HEAD' });
+								return response.ok;
+							} catch (error) {
+								return false;
+							}
+						}
+
+						// href 属性が "shutsudai.html?level=5" の <a> タグを特定
+						const specificLink = document.querySelector(`a[href="level.html?tangen=${tangen_number_2}"]`);
+
+						// 該当のリンクを非表示にする
+						//specificLink.style.display = 'none';
+						//console.log(`レベル${level_number} タグを非表示にしました: `, specificLink);
+
+						// 該当のリンクを削除する
+						//specificLink.remove();
+						//console.log(`レベル${level_number} タグを削除しました: `, specificLink);
+
+						// 該当のリンクの親要素 (li) を削除する
+						specificLink.parentElement.remove();
+						console.log(`レベル${tangen_number_2} の親要素 li タグを削除しました: `, specificLink);
+
+						tangen_number_2 = tangen_number_2 + 1;
+
+					}
+
+				})
+				.catch(error => {
+					console.error(error);
+				});
+		});
 
 	</script>
 
