@@ -175,7 +175,9 @@ function loadScript(src) {
 //変数「query_data9」には、「5_shakai_suisangyou」がセットされるように設定した。
 //ここから先は、この変数「query_data9」を使って、「レベル１」から「レベル１７」までのダグのうち、不要なタグを削除していく。
 let query_data9;
+let query_data10;
 let level_number = 1;
+let basePath;
 
 //「5_shakai.js」ファイルを読み込む。
 //「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
@@ -184,7 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadScript('script/data/' + query_data8)
         .then(() => {
             query_data9 = `${gakunen_data_atai2}_${kyouka_data_atai2}_${fname_ichibu2}_`;
-            console.log("query_data9=" + query_data9);
+            //console.log("query_data9=" + query_data9);
+            query_data10 = `${kyouka_data_atai2}_${fname_ichibu2}_`;
+            //console.log("query_data10=" + query_data10);
         })
         .then(async () => {
 
@@ -193,7 +197,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`ループ回数: ${i + 1}`);
 
                 const links = document.querySelectorAll('.home-course');
-                const basePath = 'script/data/' + query_data9 + level_number + ".js";
+
+                //sonotaのファイルの場合には、ファイル名の先頭には、学年はつかない。
+                //そのために、ここで分岐を行っている。
+                if (kyouka_data_atai2 === "sonota") {
+                    basePath = 'script/data/' + query_data10 + level_number + ".js";
+                } else {
+                    basePath = 'script/data/' + query_data9 + level_number + ".js";
+                }
+
                 //console.log("basePath=" + basePath);
 
                 async function checkScriptExistence(src) {
