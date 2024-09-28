@@ -306,7 +306,7 @@
 				.then(() => {
 					// スクリプトの読み込み後に `tangen_mei` が使用可能になる
 					if (typeof tangen_mei !== 'undefined') {
-						console.log(`読み込まれた要素数: ${tangen_mei.length}`); // 要素数を表示
+						//console.log(`読み込まれた要素数: ${tangen_mei.length}`); // 要素数を表示
 						//要素数の次の単元番号を指定する。この番号のタグから削除していく。
 						tangen_number_2 = tangen_mei.length + 1;
 
@@ -319,7 +319,7 @@
 
 					for (let i = tangen_number_2; i < 15; i++) {
 						// 繰り返し処理をここに記述
-						console.log(`ループ回数: ${i + 1}`);
+						//console.log(`ループ回数: ${i + 1}`);
 
 						async function checkScriptExistence(src) {
 							try {
@@ -343,7 +343,7 @@
 
 						// 該当のリンクの親要素 (li) を削除する
 						specificLink.parentElement.remove();
-						console.log(`レベル${tangen_number_2} の親要素 li タグを削除しました: `, specificLink);
+						//console.log(`レベル${tangen_number_2} の親要素 li タグを削除しました: `, specificLink);
 
 						tangen_number_2 = tangen_number_2 + 1;
 
