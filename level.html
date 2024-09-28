@@ -228,9 +228,13 @@
 	</footer>
 	<!-- ========== /footer ========== -->
 
-	<script src="script/data/user_mei.js"></script>
+	<!--タイムスタンプをつけて呼び出す。-->
+	<script src="script/data/user_mei.js?ts=<%= new Date().getTime() %>"></script>
+	<!--<script src="script/data/user_mei.js"></script>-->
 	<script src="script/script.js"></script>
-	<script src="script/level.js"></script>
+	<!--<script src="script/level.js"></script>-->
+	<!--タイムスタンプをつけて呼び出す。-->
+	<script src="script/level.js?ts=<%= new Date().getTime() %>"></script>
 </body>
 
 </html>
