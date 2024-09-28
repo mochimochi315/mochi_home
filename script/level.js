@@ -166,17 +166,77 @@ function loadScript(src) {
     });
 }
 
+//「tangen.js」ファイル内でも実行された「loadScript」文が、ここでも再度、実行されることによって、
+//<script src="5_shakai.js"><script>タグが動的に生成される。
+//動的に生成されると、要素の「fname_ichibu」が取得できるようになる。
+//その後リンクをクリックして、「Shutsudai.js」ファイルに遷移すると、
+//「5_shakai_1_1.js」ファイルではなく、「5_shakai_suisangyou_1.js」ファイルが呼び出されるようになる。
+//ここでは、<script src="5_shakai.js"><script>タグが動的に生成された後に、「.then」文が実行され、
+//変数「query_data9」には、「5_shakai_suisangyou」がセットされるように設定した。
+//ここから先は、この変数「query_data9」を使って、「レベル１」から「レベル１７」までのダグのうち、不要なタグを削除していく。
+let query_data9;
+let level_number = 1;
 
-// 使用例
-loadScript('script/data/' + query_data8)
-    .then(() => {
-        console.log(window.mondai); // mondai.js内の配列にアクセス
-    })
-    .catch(error => {
-        console.error(error);
-    });
+//「5_shakai.js」ファイルを読み込む。
+//「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
+//「.then」では、「5_shakai.js」ファイル内の中から、「fname_ichibu2」変数の値を読み込んでいる。
+document.addEventListener("DOMContentLoaded", () => {
+    loadScript('script/data/' + query_data8)
+        .then(() => {
+            query_data9 = `${gakunen_data_atai2}_${kyouka_data_atai2}_${fname_ichibu2}_`;
+            console.log("query_data9=" + query_data9);
+        })
+        .then(async () => {
+
+            for (let i = 0; i < 17; i++) {
+                // 繰り返し処理をここに記述
+                console.log(`ループ回数: ${i + 1}`);
+
+                const links = document.querySelectorAll('.home-course');
+                const basePath = 'script/data/' + query_data9 + level_number + ".js";
+                //console.log("basePath=" + basePath);
+
+                async function checkScriptExistence(src) {
+                    try {
+                        const response = await fetch(src, { method: 'HEAD' });
+                        return response.ok;
+                    } catch (error) {
+                        return false;
+                    }
+                }
+
+                //scriptPathを定義せずに、basePathのままでも良いと思う。一応このままにしてある。
+                const scriptPath = `${basePath}`;
+                //console.log("scriptPath=" + scriptPath);
+
+                const exists = await checkScriptExistence(scriptPath);
+                if (!exists) {
+                    // href 属性が "shutsudai.html?level=5" の <a> タグを特定
+                    const specificLink = document.querySelector(`a[href="shutsudai.html?level=${level_number}"]`);
+
+                    // 該当のリンクを非表示にする
+                    //specificLink.style.display = 'none';
+                    //console.log(`レベル${level_number} タグを非表示にしました: `, specificLink);
+
+                    // 該当のリンクを削除する
+                    //specificLink.remove();
+                    //console.log(`レベル${level_number} タグを削除しました: `, specificLink);
 
 
+                    // 該当のリンクの親要素 (li) を削除する
+                    specificLink.parentElement.remove();
+                    console.log(`レベル${level_number} の親要素 li タグを削除しました: `, specificLink);
 
+                } else {
+                    console.log(`${query_data9}${level_number}.jsファイルが存在します。`);
+                }
 
+                level_number = level_number + 1;
 
+            }
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
