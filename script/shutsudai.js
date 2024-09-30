@@ -54,8 +54,16 @@ document.getElementById('sendBtn').style.display = 'none';
 //以下のquery_data8は、このファイル内では、変数を定義していないので、query_data8のコメントには、「query_data8が見つかりませんでした。」と
 //書かれている。だが、query_data8は、shutsudai.htmlファイル内の<script>タグで変数が定義され、値が入れられている。
 //そのため、正常に実行されている。
-loadScript('script/data/' + gakunen_data_atai3 + 'nen/'+ kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
+//sonotaの場合は、学年フォルダがないので、ここで分岐させている。
+//query_data8の内容については、「shutsudai.html」ファイルのscriptで、sonotaの場合と、そうでない場合について
+//分岐させている。つまり、内容を変えている。なので、下のコードでは、両方ともquery_data8のままで良い。
+if(kyouka_data_atai3==='sonota'){
+loadScript('script/data/' + kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
 
+
+}else{
+loadScript('script/data/' + gakunen_data_atai3 + 'nen/'+ kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
+}
 
 // JavaScriptファイルを動的に読み込む関数（コールバック関数）
 //2つめの引数にかかれた「callback」は単なる引数ですが、通常「コールバック関数」として渡されるものです。
