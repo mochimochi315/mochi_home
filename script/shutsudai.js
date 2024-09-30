@@ -54,7 +54,7 @@ document.getElementById('sendBtn').style.display = 'none';
 //以下のquery_data8は、このファイル内では、変数を定義していないので、query_data8のコメントには、「query_data8が見つかりませんでした。」と
 //書かれている。だが、query_data8は、shutsudai.htmlファイル内の<script>タグで変数が定義され、値が入れられている。
 //そのため、正常に実行されている。
-loadScript('script/data/' + query_data8 + '?v=' + new Date().getTime(), renderChart);
+loadScript('script/data/' + gakunen_data_atai3 + 'nen/'+ kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
 
 
 // JavaScriptファイルを動的に読み込む関数（コールバック関数）
