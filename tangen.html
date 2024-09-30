@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon_64_01.ico">
+	<link rel="apple-touch-icon" href="/apple_touch_icon_180_01.png">
+	<meta name="description" content="教科書の単元のテスト対策は、このパークで学習しよう。１問１答式の記述問題が出題されるよ。">
+	<title>テスト対策パーク mochiお</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/tangen.css">
+
+</head>
+
+<body>
+	<!-- ========== header ========== -->
+	<header>
+		<div class="container header-container">
+			<div class="header-inner">
+				<h1 class="header-logo"><a href="index.html">
+						<img src="images/background/Logo_01.png" srcset="images//background/Logo_01.png 1x,
+				                                   images//background/Logo_01.png 2x" alt="mochiお">
+					</a></h1>
+				<button class="menu-btn" id="mobile-menu"></button>
+			</div>
+		</div><!-- /header-container -->
+	</header>
+	<!-- ========== /header ========== -->
+	<!-- ========== nav ========== -->
+	<nav>
+		<div class="container nav-container">
+			<ul class="navbar">
+				<li><a href="index.html">ホーム</a></li>
+				<li><a href="course/#">工事中</a></li>
+				<li><a href="qanda/#">工事中</a></li>
+				<li><a href="contact/#">工事中</a></li>
+			</ul>
+		</div><!-- /nav-container -->
+	</nav>
+	<!-- ========== /nav ========== -->
+
+	<!-- ========== keyvisual ========== -->
+	<div class="home-keyvisual">
+		<img src="images/background/background_image_01.png" alt="mochiお" class="img-responsive">
+	</div><!-- /.home-keyvisual -->
+	<!-- ========== /keyvisual ========== -->
+
+	<!-- ========== main ========== -->
+	<section class="main">
+		<div class="container">
+			<main>
+				<p class="home-maincopy">ここは<br>
+					<span class="home-color1">テ</span><span class="home-color2">ス</span><span
+						class="home-color3">ト</span><span class="home-color4">対策</span><span
+						class="home-color1">パ</span><span class="home-color2">ー</span><span
+						class="home-color3">ク</span><strong>だよ。</strong>
+				</p>
+				<h2 class="home-h2">説明</h2>
+				<div class="home-news">
+					<ul>
+						<li>学年、教科、単元の順に選んで学習します。</li>
+						<li>正解しないと、次の問題に進めません。</li>
+						<li>全問正解したら、先生に伝えましょう。</li>
+					</ul>
+				</div><!-- /.home-news -->
+
+				<h2 class="home-h2">単元</h2>
+				<ul class="home-course">
+					<li>
+						<!--onclickイベントの後に、ページが遷移しないようにするために、「event.preventDefault();」を記述した。-->
+						<a href="#" onclick="showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course2.png" alt="">
+								<figcaption>教科に戻る</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<!--onclickイベントの後に、ページが遷移しないようにするために、「event.preventDefault();」を記述した。-->
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=1'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course1.png" alt="">
+								<figcaption id="tangen_mei_1">単元１</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=2'; showAttribute(this); event.preventDefault();">
+
+							<figure><img src="images/course2.png" alt="">
+								<figcaption id="tangen_mei_2">単元２</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=3'; showAttribute(this); event.preventDefault();">
+
+							<figure><img src="images/course3.png" alt="">
+								<figcaption id="tangen_mei_3">単元３</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=4'; showAttribute(this); event.preventDefault();">
+
+							<figure><img src="images/course4.png" alt="">
+								<figcaption id="tangen_mei_4">単元４</figcaption>
+							</figure>
+						</a>
+					</li>
+
+				</ul>
+				<ul class="home-course">
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=5'; showAttribute(this); event.preventDefault();">
+
+							<figure><img src="images/course1.png" alt="">
+								<figcaption id="tangen_mei_5">単元５</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=6'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course2.png" alt="">
+								<figcaption id="tangen_mei_6">単元６</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=7'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course3.png" alt="">
+								<figcaption id="tangen_mei_7">単元７</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=8'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course4.png" alt="">
+								<figcaption id="tangen_mei_8">単元８</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=9'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course1.png" alt="">
+								<figcaption id="tangen_mei_9">単元９</figcaption>
+							</figure>
+						</a>
+					</li>
+
+				</ul>
+				<ul class="home-course">
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=10'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course2.png" alt="">
+								<figcaption id="tangen_mei_10">単元１０</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=11'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course3.png" alt="">
+								<figcaption id="tangen_mei_11">単元１１</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=12'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course4.png" alt="">
+								<figcaption id="tangen_mei_12">単元１２</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=13'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course1.png" alt="">
+								<figcaption id="tangen_mei_13">単元１３</figcaption>
+							</figure>
+						</a>
+					</li>
+					<li>
+						<a href="level.html"
+							onclick="this.href = 'level.html?tangen=14'; showAttribute(this); event.preventDefault();">
+							<figure><img src="images/course2.png" alt="">
+								<figcaption id="tangen_mei_14">単元１４</figcaption>
+							</figure>
+						</a>
+					</li>
+
+				</ul>
+			</main>
+		</div>
+	</section>
+	<!-- ========== /main ========== -->
+
+	<!-- ========== footer ========== -->
+	<footer>
+		<div class="container footer-container">
+			<ul class="footer-nav">
+				<li><a href="course/#">工事中</a></li>
+				<li><a href="qanda/#">工事中</a></li>
+				<li><a href="contact/#">工事中</a></li>
+			</ul><!-- /.footer-nav -->
+			<p class="footer-copyright">
+				&copy; mochiお 2024
+			</p><!-- /.footer-copyright -->
+		</div><!-- /.footer-container -->
+	</footer>
+	<!-- ========== /footer ========== -->
+
+	<script>
+
+		let level_data3 = {};
+
+		let query_data7 = GetQueryString(level_data3);
+
+		let gakunen_data_atai3 = query_data7.gakunen;
+
+		let kyouka_data_atai3 = query_data7.kyouka;
+
+		//let tangen_data_atai3 = query_data7.tangen;
+
+		//let level_data_atai3 = query_data7.level;
+
+
+		let query_data8;
+
+		//教科名が、「その他」の場合には、ファイル名には、学年をつけないようにした。
+		if (kyouka_data_atai3 === "sonota") {
+
+			query_data8 = `${kyouka_data_atai3}.js`
+
+		} else {
+
+			//テンプレート文字列で、変数を入力している。バックティックで囲んでいる。
+			query_data8 = `${gakunen_data_atai3}_` + `${kyouka_data_atai3}.js`
+
+		}
+
+		function GetQueryString(result) {
+			if (1 < window.location.search.length) {
+				// 最初の1文字 (?記号) を除いた文字列を取得する
+				let query = window.location.search.substring(1);
+
+				// クエリの区切り記号 (&) で文字列を配列に分割する
+				let parameters = query.split('&');
+
+				for (var i = 0; i < parameters.length; i++) {
+					// パラメータ名とパラメータ値に分割する
+					let element = parameters[i].split('=');
+
+					// エンコードされたパラメータ名とパラメータ値をデコードする
+					//URLのクエリ文字列がtestのような半角英数文字ならエンコードはされず、そのまま取得できる。
+					//よって、以下のデコード処理も不要。
+					let paramName = decodeURIComponent(element[0]);
+					let paramValue = decodeURIComponent(element[1]);
+
+					// パラメータ名をキーとして連想配列に追加する
+					result[paramName] = paramValue;
+
+					console.log(result);
+				}
+			}
+			return result;
+		}
+
+		//window.alert('読み込むファイル名は、' + query_data8);
+
+
+		//外部ファイルの読み込みは、<script>タグ内に記述しなくてはならないのかも。
+
+		//以下のコードだと割とうまく表示されるが、「clear cache」を実行しないと表示されない場合もある。
+		/*function loadScript(src) {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement('script');
+				script.src = src;
+				script.onload = () => resolve();
+				script.onerror = () => reject(new Error(`Script load error for ${src}`));
+				document.head.appendChild(script);
+			});
+		}*/
+
+		//以下のコードだと割とうまく表示されるが、「clear cache」を実行しないと表示されない場合もある。
+		//以下のコードでは、例えば、「query_data8」変数で、「5_shakai.js」ファイルを指定して、
+		//<script　src="5_shakai.js"><script>タグを動的に生成している。
+		function loadScript(src) {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement('script');
+				script.src = src;
+				script.defer = true;
+				//以下は、<script　src="5_shakai.js"><script>タグを動的に生成された後に発生するイベントを設定している。
+				//以下のコードでは、 <script>タグの読み込みが完了した時に、resolve() を呼び出す設定を行っている。
+				//実際には、この時点では、設定のみで、<script>タグを動的に生成はしていない。
+				script.onload = () => resolve();
+				script.onerror = () => reject(new Error(`Script load error for ${src}`));
+				//以下のコードで、実際に<script>タグが生成され、読み込まれる。
+				document.head.appendChild(script);
+			});
+		}
+
+		let tangen_number_2;
+
+		//「5_shakai.js」ファイルを読み込む。
+		//「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
+		document.addEventListener("DOMContentLoaded", () => {
+			loadScript('script/data/' + query_data8 + '?v=' + new Date().getTime())
+				.then(() => {
+					console.log("tangen_mei=" + tangen_mei); // tangen_mei内の配列にアクセス
+				})
+				.then(() => {
+					// スクリプトの読み込み後に `tangen_mei` が使用可能になる
+					if (typeof tangen_mei !== 'undefined') {
+						//console.log(`読み込まれた要素数: ${tangen_mei.length}`); // 要素数を表示
+						//要素数の次の単元番号を指定する。この番号のタグから削除していく。
+						tangen_number_2 = tangen_mei.length + 1;
+
+					} else {
+						console.error('tangen_mei が定義されていません');
+					}
+				})
+
+				.then(async () => {
+
+					for (let i = tangen_number_2; i < 15; i++) {
+						// 繰り返し処理をここに記述
+						//console.log(`ループ回数: ${i + 1}`);
+
+						async function checkScriptExistence(src) {
+							try {
+								const response = await fetch(src, { method: 'HEAD' });
+								return response.ok;
+							} catch (error) {
+								return false;
+							}
+						}
+
+						// href 属性が "shutsudai.html?level=5" の <a> タグを特定
+						const specificLink = document.querySelector(`a[href="level.html?tangen=${tangen_number_2}"]`);
+
+						// 該当のリンクを非表示にする
+						//specificLink.style.display = 'none';
+						//console.log(`レベル${level_number} タグを非表示にしました: `, specificLink);
+
+						// 該当のリンクを削除する
+						//specificLink.remove();
+						//console.log(`レベル${level_number} タグを削除しました: `, specificLink);
+
+						// 該当のリンクの親要素 (li) を削除する
+						specificLink.parentElement.remove();
+						//console.log(`レベル${tangen_number_2} の親要素 li タグを削除しました: `, specificLink);
+
+						tangen_number_2 = tangen_number_2 + 1;
+
+					}
+
+				})
+				.catch(error => {
+					console.error(error);
+				});
+		});
+
+	</script>
+
+	<script src="script/script.js"></script>
+	<!--タイムスタンプをつけて呼び出す。-->
+	<script src="script/tangen.js?ts=<%= new Date().getTime() %>"></script>
+
+</body>
+
+</html>
