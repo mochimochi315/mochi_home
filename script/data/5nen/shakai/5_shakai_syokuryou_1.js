@@ -6,5 +6,7 @@ const mondai = [
     { number: 5, question: 'P114。にんじん、ねぎ、かぼちゃ、牛肉は、輸入のほうが値段が（　　　）。', answer: 'やすい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 6, question: 'P116。野菜工場では、室内で光や温度を調節して、（　　　）に生産します。', answer: 'けいかくてき', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 7, question: 'P117。形や見ばえが悪い野菜も、味や（　　　）に問題がなければ、むだにせずに売っている。', answer: 'あんぜんせい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 8, question: 'P117。日本の食料生産のことを考えると、（　　　）にばかりたよらず、国内で生産された農作物を食べることが大切になっている。', answer: 'ゆにゅう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 8, question: 'P117。日本の食料生産のことを考えると、（　　　）にばかりたよらず、国内で生産された農作物を食べることが大切になっている。', answer: 'ゆにゅう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 9, question: 'P117。日本の食料生産のことを考えると、（　　　）にばかりたよらず、国内で生産された農作物を食べることが大切になっている。', answer: 'ゆにゅう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 10, question: 'P113。私たちは、（　　　）食材を多く食べている。', answer: 'ゆにゅうした', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
