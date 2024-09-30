@@ -183,7 +183,7 @@ let basePath;
 //「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
 //「.then」では、「5_shakai.js」ファイル内の中から、「fname_ichibu2」変数の値を読み込んでいる。
 document.addEventListener("DOMContentLoaded", () => {
-    loadScript('script/data/' + query_data8)
+    loadScript('script/data/' + gakunen_data_atai2 + 'nen/' + kyouka_data_atai2 + '/' + query_data8)
         .then(() => {
             query_data9 = `${gakunen_data_atai2}_${kyouka_data_atai2}_${fname_ichibu2}_`;
             //console.log("query_data9=" + query_data9);
