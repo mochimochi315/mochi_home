@@ -201,9 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 //sonotaのファイルの場合には、ファイル名の先頭には、学年はつかない。
                 //そのために、ここで分岐を行っている。
                 if (kyouka_data_atai2 === "sonota") {
-                    basePath = 'script/data/' + query_data10 + level_number + ".js";
+                    basePath = 'script/data/' + kyouka_data_atai2 + '/' + query_data10 + level_number + ".js";
                 } else {
-                    basePath = 'script/data/' + query_data9 + level_number + ".js";
+                    basePath = 'script/data/' + gakunen_data_atai2 + 'nen/' + kyouka_data_atai2 + '/' + query_data9 + level_number + ".js";
                 }
 
                 //console.log("basePath=" + basePath);
