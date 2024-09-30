@@ -316,7 +316,7 @@
 		//「5_shakai.js」ファイルを読み込む。
 		//「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
 		document.addEventListener("DOMContentLoaded", () => {
-			loadScript('script/data/' + gakunen_data_atai3 + 'nen/' + kyouka_data_atai3 + '/' + query_data8 + '?v=' + new Date().getTime())
+			loadScript('script/data/' + query_data8 + '?v=' + new Date().getTime())
 				.then(() => {
 					console.log("tangen_mei=" + tangen_mei); // tangen_mei内の配列にアクセス
 				})
