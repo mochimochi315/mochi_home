@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     basePath = 'script/data/' + gakunen_data_atai2 + 'nen/' + kyouka_data_atai2 + '/' + query_data9 + level_number + ".js";
                 }
 
-                //console.log("basePath=" + basePath);
+                console.log("basePath=" + basePath);
 
                 async function checkScriptExistence(src) {
                     try {
