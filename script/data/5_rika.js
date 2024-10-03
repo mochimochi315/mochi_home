@@ -1,5 +1,6 @@
 const tangen_mei = [
-    { number: 1, tangen_mei: '花から実へ',fname_ichibu:'hana_kara_mie'}
+    { number: 1, tangen_mei: '花から実へ',fname_ichibu:'hana_kara_mie'},
+    { number: 2, tangen_mei: 'ヒトのたんじょう',fname_ichibu:'hito_no_tanjyou'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
