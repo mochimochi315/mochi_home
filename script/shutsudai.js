@@ -57,12 +57,12 @@ document.getElementById('sendBtn').style.display = 'none';
 //sonotaの場合は、学年フォルダがないので、ここで分岐させている。
 //query_data8の内容については、「shutsudai.html」ファイルのscriptで、sonotaの場合と、そうでない場合について
 //分岐させている。つまり、内容を変えている。なので、下のコードでは、両方ともquery_data8のままで良い。
-if(kyouka_data_atai3==='sonota'){
-loadScript('script/data/' + kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
+if (kyouka_data_atai3 === 'sonota') {
+    loadScript('script/data/' + kyouka_data_atai3 + '/' + query_data8 + '?v=' + new Date().getTime(), renderChart);
 
 
-}else{
-loadScript('script/data/' + gakunen_data_atai3 + 'nen/'+ kyouka_data_atai3 + '/'+ query_data8 + '?v=' + new Date().getTime(), renderChart);
+} else {
+    loadScript('script/data/' + gakunen_data_atai3 + 'nen/' + kyouka_data_atai3 + '/' + query_data8 + '?v=' + new Date().getTime(), renderChart);
 }
 
 // JavaScriptファイルを動的に読み込む関数（コールバック関数）
@@ -316,11 +316,41 @@ function answerQuiz2() {
         //原因は、不明だが、以下のようにタイムスタンプをつけたら解決するかもしれないと思い、以下のコードにした。
         //このコードが有効かどうかについては、今後、検証していく予定。2024.9.21
         //理科のような問題文に画像ファイルがある場合には、画像ファイルにタイムスタンプをつけて呼び出すことにしている。
-        imgElement.src = `images/img_data/${image_file_name}?v=${new Date().getTime()}`;
-        //imgElement.src = "images/img_data/1-shakai-1-01.png";
+        if (kyouka_data_atai3 === 'sonota') {
+            imgElement.src = `images/img_data/${kyouka_data_atai3}/${image_file_name}?v=${new Date().getTime()}`;
 
+        } else {
+            imgElement.src = `images/img_data/${gakunen_data_atai3}nen/${kyouka_data_atai3}/${image_file_name}?v=${new Date().getTime()}`;
+
+        }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //問題文の表示
     //textContentではなく、innerHTMLにしている。つまり、タグを入れるようにしている。
