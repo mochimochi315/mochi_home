@@ -326,32 +326,6 @@ function answerQuiz2() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //問題文の表示
     //textContentではなく、innerHTMLにしている。つまり、タグを入れるようにしている。
     //これによって、問題文の中に<BR>タグを入れることで、改行できるようになる。
@@ -367,7 +341,10 @@ function answerQuiz2() {
         event.preventDefault();
 
         //解答欄に入力された答えを変数に入れている。
-        const search = document.getElementById('form').kaitouran.value;
+        let search = document.getElementById('form').kaitouran.value;
+
+        //入力された解答から、半角空白を取り除く。
+        search = search.trim();
 
         //window.alert("解答欄の答え=" + search);
 
