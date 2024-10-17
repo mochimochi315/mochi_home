@@ -343,7 +343,8 @@ function answerQuiz2() {
         //解答欄に入力された答えを変数に入れている。
         let search = document.getElementById('form').kaitouran.value;
 
-        //入力された解答から、半角空白を取り除く。
+        //入力された解答から、半角空白、全角空白を取り除く。
+        //VBAと違って、JavaScriptの場合は、trim()で、文字の両端から、半角空白、全角空白、改行等のホワイトスペースを取り除くことができる。
         search = search.trim();
 
         //window.alert("解答欄の答え=" + search);
