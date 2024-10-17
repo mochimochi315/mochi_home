@@ -1,6 +1,6 @@
 const mondai = [
     { number: 1, question: 'P131。働きやすい環境を整えることが、ミスを防（ふせ）ぎ、（　　　）にもつながります。', answer: 'こうりつのよいせいさん', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 2, question: 'P132。シートは、自動車工場の（　　　）にある関連工場で生産されています。', answer: 'かんれんこうじょう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 2, question: 'P132。シートは、自動車工場の（　　　）にある関連工場で生産されています。', answer: 'ちかく', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 3, question: 'P132。シート工場の検査では、少しでもしわやきずがあれば、すぐに（　　　）なくてはなりません。', answer: 'とりかえ', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 4, question: 'P133。１台の自動車を生産するためには、２万から３万個ほどの（　　　）が必要になります。', answer: 'ぶひん', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 5, question: 'P134。自動車工場から、遠い地域に運ばれる自動車は、工場のそばの港で、専用の（　　　）に積みこまれます。', answer: 'ふね', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
