@@ -1,5 +1,5 @@
 const mondai = [
-    { number: 1, question: 'P146。国と国との間で、品物を売り買いすること', answer: '', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 1, question: 'P146。国と国との間で、品物を売り買いすること', answer: 'ぼうえき', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 2, question: 'P149。2021年の日本の輸入品で、最も輸入額が多いものは？', answer: 'きかいるい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 3, question: 'P155。食料生産の学習でも、輸入にたよりすぎるのは心配だと思ったけれど、（　　　）は輸入にたよるしかないのかな？', answer: 'てんねんしげん', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 4, question: 'P162のウを見て答えましょう。2020年の外国にある日本の会社の数は、1990年と比べると（　　　）いる。', answer: 'ふえて', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
