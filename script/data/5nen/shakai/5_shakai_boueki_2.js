@@ -8,5 +8,5 @@ const mondai = [
     { number: 7, question: 'P160。生産額の半分以上は、（　　　）工場がしめている。', answer: 'だい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 8, question: 'P167。紙を加工する工場の上田さんの話では、（　　　　）製品をつくることが大切だと考えている。', answer: 'かんきょうにやさしい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 9, question: 'P167のコを見て答えましょう。市内のすぐれた技術をもった工場が集まり、その技術やアイデア、質の高い製品を（　　　）している。', answer: 'しょうかい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 10, question: 'P173。植物の一部や動物のふんにょうなどを使って生み出すバイオマスエネルギーは、（）エネルギーとして注目されている。', answer: 'かんきょうにやさしい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 10, question: 'P173。植物の一部や動物のふんにょうなどを使って生み出すバイオマスエネルギーは、（　　　）エネルギーとして注目されている。', answer: 'かんきょうにやさしい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
