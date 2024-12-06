@@ -2,7 +2,7 @@ const tangen_mei = [
     { number: 1, tangen_mei: '九九プラス',fname_ichibu:'kukuplus'},
     { number: 2, tangen_mei: 'ローマ字',fname_ichibu:'roumaji'},
     { number: 3, tangen_mei: 'たし算ひき算1',fname_ichibu:'1+-1'},
-    { number: 4, tangen_mei: 'わり算1',fname_ichibu:'2%1'}
+    { number: 4, tangen_mei: 'わり算1',fname_ichibu:'2--1'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
