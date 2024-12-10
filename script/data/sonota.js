@@ -2,7 +2,12 @@ const tangen_mei = [
     { number: 1, tangen_mei: '九九プラス',fname_ichibu:'kukuplus'},
     { number: 2, tangen_mei: 'ローマ字',fname_ichibu:'roumaji'},
     { number: 3, tangen_mei: 'たし算ひき算1',fname_ichibu:'1+-1'},
-    { number: 4, tangen_mei: 'わり算1',fname_ichibu:'2waru1'}
+    { number: 4, tangen_mei: 'わり算1',fname_ichibu:'2waru1'},
+    { number: 5, tangen_mei: '3桁のたし算',fname_ichibu:'3tasizan'},
+    { number: 6, tangen_mei: '3桁のひき算',fname_ichibu:'3hikizan'},
+    { number: 7, tangen_mei: '2桁のかけ算',fname_ichibu:'2kakezan'},
+    { number: 8, tangen_mei: 'わり算2',fname_ichibu:'2waruwaru1'},
+    { number: 9, tangen_mei: 'わり算3',fname_ichibu:'3waru1'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
