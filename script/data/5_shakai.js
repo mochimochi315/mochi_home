@@ -2,7 +2,8 @@ const tangen_mei = [
     { number: 1, tangen_mei: '水産業のさかんな地域',fname_ichibu:'suisangyou'},
     { number: 2, tangen_mei: 'これからの食料生産',fname_ichibu:'syokuryou'},
     { number: 3, tangen_mei: '自動車の生産に励む人々',fname_ichibu:'jidousha'},
-    { number: 4, tangen_mei: '日本の工業生産と貿易・運輸',fname_ichibu:'boueki'}
+    { number: 4, tangen_mei: '日本の工業生産と貿易・運輸',fname_ichibu:'boueki'},
+    { number: 5, tangen_mei: '情報を伝える人々とわたしたち',fname_ichibu:'jyouhou'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
