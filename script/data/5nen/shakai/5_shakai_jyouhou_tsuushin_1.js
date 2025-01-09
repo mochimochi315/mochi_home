@@ -5,7 +5,7 @@ const mondai = [
     { number: 4, question: 'P193。全国各地にチェーン店がある会社では、POSシステムを通じて、それぞれの店の（　　　）の情報を本部に集めています。', answer: 'うれゆき', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 5, question: 'P193。コンビニエンスストアやファーストフード店にみられる、全国各地に展開（てんかい）する店のことを（　　　）店という。（カタカナ）', answer: 'チェーン', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 6, question: 'P190。コンピューターやインターネットを使い、大量の情報を管理したり、はなれた場所ですぐにやりとりしたりすることができるしくみのことを（　　　）技術という。', answer: 'じょうほうつうしん', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 7, question: 'P190。買い物の支はらいでは、元気を使わない「（　　　）」が増えています。（カタカナ）', answer: 'キャッシュレス', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 7, question: 'P190。買い物の支はらいでは、現金を使わない「（　　　）」が増えています。（カタカナ）', answer: 'キャッシュレス', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 8, question: 'P191。現金でもキャッシュレスでも、（　　　）を通して会計するのは変わりません。（カタカナ）', answer: 'レジ', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 9, question: 'P192。集められ、整理された情報をもとに、できるだけ（　　　）も売り切れも出ない量を考えて、商品を発注しています。', answer: 'うれのこり', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
 ];
