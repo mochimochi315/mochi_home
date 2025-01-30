@@ -1,6 +1,6 @@
 const mondai = [
     { number: 1, question: 'P90　これほど多くのまんが本が発行され、読まれているのは、まんがが、（　　）から。', answer: 'りくつぬきにおもしろい', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 2, question: 'P91　（　　　）方法を「まんがの方法」とよぶことにしましょう。', answer: 'きょうつうしたひょうげんほうほう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 2, question: 'P91　（　　　）方法を「まんがの方法」とよぶことにしましょう。', answer: 'きょうつうしたひょうげん', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 3, question: 'P92　ふつうは、上から下へ、（　　　）へと読んでいきます。', answer: 'みぎからひだり', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 4, question: 'P92　前のページのまんがは、わく線を破ることで（　　　）を表現しています。', answer: 'つよいおどろき', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 5, question: 'P92　また、コマと同じくらい重要なものに、登場人物たちの話す（　　　）（言葉）があります。', answer: 'せりふ', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
