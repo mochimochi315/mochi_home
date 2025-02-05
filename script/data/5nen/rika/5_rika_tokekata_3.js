@@ -8,5 +8,5 @@ const mondai = [
     { number: 7, question: 'P153　液の中にとけ切れなかったつぶがあるときは、ろ紙でこして、つぶと水よう液を（　　　）ことができます。', answer: 'わける', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 8, question: 'P153　液は（　　　）ぼうに伝わらせて注ぐ。（カタカナ）', answer: 'ガラス', image_name: '5_rika_tokekata_04.png', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 9, question: 'P154　食塩水の水よう液を冷やした場合には、食塩水のつぶを取り出すことが（　　　）。', answer: 'できない', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
-    { number: 10, question: 'ミョウバンの水よう液を冷やすと、白いものが出てくるが、水の温度を（　　　）と、白いものをもう一度とかすことができる。', answer: 'あげる', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''}
+    { number: 10, question: 'ミョウバンの水よう液を冷やすと、白いものが出てくるが、水の温度を（　　　）と、白いものをもう一度とかすことができる。', answer: 'あげる', image_name: '', answer2: 'あげる', etc_2: '', etc_3: '', etc_4: ''}
 ];
