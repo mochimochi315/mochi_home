@@ -3,7 +3,8 @@ const tangen_mei = [
     { number: 2, tangen_mei: 'ヒトのたんじょう',fname_ichibu:'hito_no_tanjyou'},
     { number: 3, tangen_mei: '流れる水のはたらき',fname_ichibu:'nagareru_mizu'},
     { number: 4, tangen_mei: 'ふりこのきまり',fname_ichibu:'furiko'},
-    { number: 5, tangen_mei: 'もののとけ方',fname_ichibu:'tokekata'}
+    { number: 5, tangen_mei: 'もののとけ方',fname_ichibu:'tokekata'},
+    { number: 6, tangen_mei: '電流と電磁石',fname_ichibu:'denryuu'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
