@@ -1,5 +1,5 @@
 const mondai = [
-    { number: 1, question: 'P163　②の部分を何といいますか。', answer: '鉄心', image_name: '5_rika_denryuu_02.png', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
+    { number: 1, question: 'P163　②の部分を何といいますか。', answer: 'てつしん', image_name: '5_rika_denryuu_02.png', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 2, question: 'P168　電磁石に電流を流した時、②は、N極、S極のどちらになりますか。', answer: 'えぬきょく', image_name: '5_rika_denryuu_04.png', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 3, question: 'P167　かん電池の向きを変えると、（　　　）の向きも変わる。', answer: 'でんりゅう', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
     { number: 4, question: 'P168　電磁石は、コイルに電流が流れているときだけ、（　　　）の性質をもつ。', answer: 'じしゃく', image_name: '', answer2: '', etc_2: '', etc_3: '', etc_4: ''},
