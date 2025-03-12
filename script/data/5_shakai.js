@@ -6,7 +6,7 @@ const tangen_mei = [
     { number: 5, tangen_mei: '情報を伝える人々とわたしたち',fname_ichibu:'jyouhou'},
     { number: 6, tangen_mei: 'くらしと産業を変える情報通信技術',fname_ichibu:'jyouhou_tsuushin'},
     { number: 7, tangen_mei: '自然災害とともに生きる',fname_ichibu:'saigai'},
-    { number: 8, tangen_mei: '林とともに生きる・環境をともに守る',fname_ichibu:'shinrin_kankyou'}
+    { number: 8, tangen_mei: '森林とともに生きる・環境をともに守る',fname_ichibu:'shinrin_kankyou'}
 ];
 
 //単元名をオブジェクト配列にしたため、以下のコードに変更になった。
