@@ -71,7 +71,7 @@
 				<div class="home-news">
 					<ul>
 						<li>学年、教科、単元の順に選んで学習します。</li>
-						<li>正解しないと、次の問題に進めません。</li>
+						<li>正解しないと、くり返し同じ問題が出てきます。</li>
 						<li>全問正解したら、先生に伝えましょう。</li>
 					</ul>
 				</div><!-- /.home-news -->
@@ -306,6 +306,17 @@
 
 		let tangen_number_2;
 
+		// 非同期関数でスクリプトの存在確認を行う関数を定義
+		async function checkScriptExistence(src) {
+			try {
+				// HEAD リクエストを送信し、リソースが存在するか確認
+				const response = await fetch(src, { method: 'HEAD' });
+				return response.ok;  // 存在すれば true を返す
+			} catch (error) {
+				return false;  // エラーが発生した場合は false を返す
+			}
+		}
+
 		//「5_shakai.js」ファイルを読み込む。
 		//「.then」は、「5_shakai.js」ファイルの読み込みが完了してから行われる。
 		document.addEventListener("DOMContentLoaded", () => {
@@ -330,15 +341,6 @@
 					for (let i = tangen_number_2; i < 15; i++) {
 						// 繰り返し処理をここに記述
 						//console.log(`ループ回数: ${i + 1}`);
-
-						async function checkScriptExistence(src) {
-							try {
-								const response = await fetch(src, { method: 'HEAD' });
-								return response.ok;
-							} catch (error) {
-								return false;
-							}
-						}
 
 						// href 属性が "shutsudai.html?level=5" の <a> タグを特定
 						const specificLink = document.querySelector(`a[href="level.html?tangen=${tangen_number_2}"]`);
